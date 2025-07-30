@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Kevin's Real Estate</title>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -33,34 +33,33 @@
 
     <section id="about">
       <h3>About Me</h3>
-      <p>I'm Kevin, your trusted real estate guide in the Greater Houston Area.</p>
+      <p>I'm Kevin, your trusted real estate guide in [Your City].</p>
     </section>
 
     <section id="contact">
-  <h3>Contact</h3>
-  <form
-    action="https://formspree.io/f/mzzvvejb"
-    method="POST"
-    enctype="multipart/form-data"
-  >
-    <label>
-      Your email:
-      <input type="email" name="email" required>
-    </label>
-    <label>
-      Your file:
-      <input type="file" name="upload">
-    </label>
-    <button type="submit">Send</button>
-  </form>
-</section>
-
+      <h3>Contact</h3>
+      <form
+        action="https://formspree.io/f/mzzvvejb"
+        method="POST"
+      >
+        <label>
+          Your email:
+          <input type="email" name="email" required />
+        </label>
+        <label>
+          Your message:
+          <textarea name="message" required></textarea>
+        </label>
+        <button type="submit">Send</button>
+      </form>
+    </section>
   </main>
 
   <footer>
-    <p>© 2025 Kevin H Nguyen's Real Estate</p>
+    <p>© 2025 Kevin's Real Estate</p>
   </footer>
 
   <script src="stars.js"></script>
 </body>
 </html>
+
