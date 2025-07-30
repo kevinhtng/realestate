@@ -46,7 +46,7 @@ section {
   margin: auto;
 }
 
-/* --- Form Styles (Applies to all forms) --- */
+/* --- Form Styles --- */
 
 form label {
   display: block;
@@ -64,8 +64,8 @@ form textarea {
   border: 1px solid #444;
 }
 
-form input[type="file"] {
-  padding: 0.5rem;
+form textarea {
+  resize: vertical; /* Allows vertical resizing */
 }
 
 form button {
