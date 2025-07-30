@@ -3,63 +3,185 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kevin's Real Estate</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Kevin H Nguyen - Realtor</title>
+  <style>
+    /* Basic reset and black background */
+    body, html {
+      margin: 0; padding: 0; height: 100%;
+      background: black;
+      color: white;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+    }
+    /* Star canvas full screen behind */
+    #stars {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: 0;
+      display: block;
+      background: black;
+    }
+    /* Main container over stars */
+    #content {
+      position: relative;
+      z-index: 10;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    h1, h2 {
+      margin-bottom: 1rem;
+    }
+    /* Carousel styles */
+    #carousel-container {
+      position: relative;
+      margin: 2rem 0;
+      overflow: hidden;
+    }
+    #carousel {
+      display: flex;
+      gap: 1rem;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding-bottom: 1rem;
+    }
+    #carousel::-webkit-scrollbar {
+      display: none;
+    }
+    .deal-card {
+      flex: 0 0 auto;
+      width: 280px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 8px;
+      padding: 0.5rem;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .deal-card:hover {
+      transform: scale(1.05);
+      background: rgba(255,255,255,0.2);
+    }
+    .deal-image {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 6px;
+      background: #222;
+    }
+    .deal-caption {
+      margin-top: 0.5rem;
+      font-weight: bold;
+    }
+    /* Navigation arrows */
+    .nav-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.2);
+      border: none;
+      color: white;
+      font-size: 2rem;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      cursor: pointer;
+      user-select: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s ease;
+      z-index: 20;
+    }
+    .nav-button:hover {
+      background: rgba(255,255,255,0.5);
+    }
+    #nav-left {
+      left: 0;
+    }
+    #nav-right {
+      right: 0;
+    }
+    /* Contact form styles */
+    form {
+      background: rgba(255,255,255,0.1);
+      padding: 1rem;
+      border-radius: 8px;
+      max-width: 400px;
+      margin-top: 2rem;
+    }
+    form label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+    form input[type="email"],
+    form textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border-radius: 4px;
+      border: none;
+      resize: vertical;
+      font-size: 1rem;
+    }
+    form button {
+      background: white;
+      color: black;
+      border: none;
+      padding: 0.7rem 1.2rem;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    form button:hover {
+      background: #eee;
+    }
+    /* Footer contact info */
+    footer {
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+  </style>
 </head>
 <body>
-  <canvas id="starfield"></canvas>
 
-  <header>
-    <h1>Kevin's Real Estate</h1>
-    <nav>
-      <ul>
-        <li><a href="#listings">Listings</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+  <canvas id="stars"></canvas>
 
-  <main>
-    <section class="hero">
-      <h2>Find Your Dream Home</h2>
-      <p>Helping you buy, sell, and invest with confidence.</p>
-    </section>
+  <div id="content">
+    <h1>Kevin Nguyen - Closed Deals Portfolio</h1>
+    <p>Showing my past closed deals. Click on any deal to visit its HAR listing.</p>
 
-    <section id="listings">
-      <h3>Featured Listings</h3>
-      <p>Coming soon...</p>
-    </section>
+    <div id="carousel-container">
+      <button id="nav-left" class="nav-button" aria-label="Scroll Left">🐻</button>
+      <div id="carousel"></div>
+      <button id="nav-right" class="nav-button" aria-label="Scroll Right">🐻</button>
+    </div>
 
-    <section id="about">
-      <h3>About Me</h3>
-      <p>I'm Kevin, your trusted real estate guide in [Your City].</p>
-    </section>
-
-    <section id="contact">
-      <h3>Contact</h3>
-      <form
-        action="https://formspree.io/f/mzzvvejb"
-        method="POST"
+    <h2>Contact Me</h2>
+    <form
+      action="https://formspree.io/f/mzzvvejb"
+      method="POST"
       >
-        <label>
-          Your email:
-          <input type="email" name="email" required />
-        </label>
-        <label>
-          Your message:
-          <textarea name="message" required></textarea>
-        </label>
-        <button type="submit">Send</button>
-      </form>
-    </section>
-  </main>
+      <label for="email">Your Email:</label>
+      <input type="email" id="email" name="email" required />
 
-  <footer>
-    <p>© 2025 Kevin's Real Estate</p>
-  </footer>
+      <label for="message">Your Message:</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
 
-  <script src="stars.js"></script>
+      <button type="submit">Send</button>
+    </form>
+
+    <footer>
+      <p>Kevin Nguyen - Real Estate Agent</p>
+      <p>Email: kevin@example.com | Phone: (123) 456-7890</p>
+      <p>Licensed in Texas</p>
+    </footer>
+  </div>
+
+  <script src="scripts.js"></script>
 </body>
 </html>
-
