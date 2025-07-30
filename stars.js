@@ -90,7 +90,7 @@ btnRight.addEventListener('click', () => {
 });
 
 // STAR FIELD BACKGROUND
-const canvas = document.getElementById('stars');
+const canvas = document.getElementById('starfield');
 const ctx = canvas.getContext('2d');
 let width, height;
 let stars = [];
