@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kevin's Real Estate</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="starfield"></canvas>
+
+  <header>
+    <h1>Kevin's Real Estate</h1>
+    <nav>
+      <ul>
+        <li><a href="#listings">Listings</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h2>Find Your Dream Home</h2>
+      <p>Helping you buy, sell, and invest with confidence.</p>
+    </section>
+
+    <section id="listings">
+      <h3>Featured Listings</h3>
+      <p>Coming soon...</p>
+    </section>
+
+    <section id="about">
+      <h3>About Me</h3>
+      <p>I'm Kevin, your trusted real estate guide in the Greater Houston Area.</p>
+    </section>
+
+    <section id="contact">
+  <h3>Contact</h3>
+  <form
+    action="https://formspree.io/f/mzzvvejb"
+    method="POST"
+    enctype="multipart/form-data"
+  >
+    <label>
+      Your email:
+      <input type="email" name="email" required>
+    </label>
+    <label>
+      Your file:
+      <input type="file" name="upload">
+    </label>
+    <button type="submit">Send</button>
+  </form>
+</section>
+
+  </main>
+
+  <footer>
+    <p>© 2025 Kevin H Nguyen's Real Estate</p>
+  </footer>
+
+  <script src="stars.js"></script>
+</body>
+</html>
