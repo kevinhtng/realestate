@@ -69,9 +69,12 @@ canvas#starfield {
   user-select: none;
 }
 
+/* Smaller, neater highlight on focus/active */
 .nav-link:hover,
-.nav-link:focus {
-  background-color: #444;
+.nav-link:focus,
+.nav-link:active {
+  background-color: rgba(255, 255, 255, 0.1);
+  outline: none;
 }
 
 /* Hamburger menu button */
@@ -86,6 +89,7 @@ canvas#starfield {
   height: 44px;
 }
 
+/* Hamburger lines centered and consistent */
 .hamburger,
 .hamburger::before,
 .hamburger::after {
@@ -95,21 +99,22 @@ canvas#starfield {
   height: 4px;
   border-radius: 2px;
   position: absolute;
-  width: 28px;
-  left: 8px;
+  width: 25px;       /* narrower and consistent */
+  left: 50%;         /* center horizontally */
+  transform: translateX(-50%);
   transition: all 0.3s ease;
 }
 
 .hamburger {
-  top: 20px;
+  top: 14px;          /* adjusted for better spacing */
 }
 
 .hamburger::before {
-  top: 12px;
+  top: 6px;
 }
 
 .hamburger::after {
-  top: 28px;
+  top: 22px;
 }
 
 /* When toggled open */
@@ -118,13 +123,13 @@ canvas#starfield {
 }
 
 .nav-toggle.open .hamburger::before {
-  top: 20px;
-  transform: rotate(45deg);
+  top: 14px;
+  transform: translateX(-50%) rotate(45deg);
 }
 
 .nav-toggle.open .hamburger::after {
-  top: 20px;
-  transform: rotate(-45deg);
+  top: 14px;
+  transform: translateX(-50%) rotate(-45deg);
 }
 
 /* Mobile nav menu */
