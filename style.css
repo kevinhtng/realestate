@@ -483,7 +483,10 @@ footer a:focus {
   margin: 0 0.5rem;
   text-decoration: none;
 }
-
+/* Offset anchor jumps for sticky navbar */
+section {
+  scroll-margin-top: 56px; /* height of your sticky navbar */
+}
 /* Responsive typography & layout adjustments */
 @media (max-width: 768px) {
   h1 {
