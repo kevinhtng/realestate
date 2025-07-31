@@ -143,16 +143,36 @@ btnRight.addEventListener('click', () => {
 // Reviews data (add as many as you want)
 const reviews = [
   {
-    quote: "Kevin made selling our home a breeze. Highly recommend!",
-    reviewer: "Jane D., Houston, TX"
+    quote: "You've been so helpful and attentive throughout this whole process, and you're a funny guy, Kevin!",
+    reviewer: "Matthew M."
   },
   {
-    quote: "Professional, knowledgeable, and very responsive. A+ service!",
-    reviewer: "Mark T."
+    quote: "My family and I needed to get into a house quickly and Kevin made it happen! He had to work around some unique constraints that made things difficult to the point other Agents would have not bothered. Kevin's communication was tailored to my needs and his response time was insanely fast. Kevin took a huge burden off our shoulders and when the opportunity arises we will definitely work with Kevin again!",
+    reviewer: "Arthur L."
   },
   {
-    quote: "Helped us find our dream home quickly and effortlessly.",
-    reviewer: "Samantha R."
+    quote: "Kevin is a great asset to any real estate team. He’s helped us get our rental properties filled and has such a seamless and thoughtful process. Kevin is one of the best realtors we’ve dealt with.",
+    reviewer: "Nancy T."
+  },
+  {
+    quote: "Kevin was a huge help during my tough move and got the job done fast! If you’re looking for a realtor he’s the one! Accommodating, personable, and swift. Couldn’t ask for more.",
+    reviewer: "Summer Z."
+  },
+  {
+    quote: "Kevin is a great realtor! He helped me and my sister find a great place and worked with us throughout the whole process! He's very nice, responsive, and I would reccomend him to anyone looking for a house or rental!",
+    reviewer: "Cecilia R."
+  },
+  {
+    quote: "Kevin, is awesome! I would certianly recommend him for realty needs as he provides great service and communication.",
+    reviewer: "Ari X."
+  },
+  {
+    quote: "Kevin it’s such a great realtor to work with. His response is immediate. He helped me get my clients into the property he was leasing fast and efficiently even when he was out of town.",
+    reviewer: "Beverlin V."
+  },
+  {
+    quote: "Kevin is so professional and his communication is top tier. He made everything easy with our clients. Definitely recommend him and his listings.",
+    reviewer: "Latoya W."
   }
 ];
 
