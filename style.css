@@ -427,9 +427,8 @@ canvas#starfield {
 
 .review-card {
   flex: 0 0 auto;
-  width: 90vw;               /* Responsive width relative to viewport */
-  max-width: 280px;          /* Upper limit for large screens */
-  min-width: 240px;          /* Lower limit for small screens */
+  width: 220px;              /* narrower width */
+  height: auto;              /* let height grow based on content */
   background: rgba(255, 255, 255, 0.05);
   border-radius: 8px;
   box-shadow: 0 0 6px rgba(255, 255, 255, 0.1);
@@ -440,7 +439,9 @@ canvas#starfield {
   word-wrap: break-word;
   white-space: normal;
   overflow-wrap: break-word;
-  box-sizing: border-box;   /* Important: includes padding in width */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .review-card .quote {
@@ -564,5 +565,11 @@ section {
 @media (min-width: 769px) {
   .nav-toggle {
     display: none !important;
+  }
+}
+@media (max-width: 768px) {
+  .review-card {
+    width: 85vw;
+    max-width: 240px;
   }
 }
