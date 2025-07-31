@@ -8,6 +8,15 @@ navToggle.addEventListener('click', () => {
   navMenu.classList.toggle('open');
 });
 
+// Close hamburger menu when clicking nav links
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', () => {
+    navToggle.setAttribute('aria-expanded', false);
+    navToggle.classList.remove('open');
+    navMenu.classList.remove('open');
+  });
+});
+
 // Accordion toggles
 document.querySelectorAll('.accordion-toggle').forEach(button => {
   button.addEventListener('click', () => {
@@ -23,6 +32,7 @@ document.querySelectorAll('.accordion-toggle').forEach(button => {
     }
   });
 });
+
 
 // Deal data: number, HAR link, image try loaded from HAR URL (same as link)
 const deals = [
