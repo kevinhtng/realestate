@@ -558,18 +558,21 @@ section {
     scroll-padding-left: 1rem;
   }
 }
-/* Hide nav toggle on desktop */
-@media (min-width: 769px) {
+/* Fix review carousel width on mobile */
+@media (max-width: 768px) {
+  #reviews-carousel {
+    width: 100%;  /* use 100% of container, not viewport */
+  }
+
+  /* Make sure nav toggle button only shows on mobile */
   .nav-toggle {
-    display: none !important;
+    display: block;
   }
 }
 
-/* Review card width tweak on mobile */
-@media (max-width: 768px) {
-  .review-card {
-    width: auto;       /* let width adapt */
-    max-width: 280px;  /* don't get wider than desktop size */
-    min-width: 90vw;   /* take at least 90% of viewport width */
+/* Hide nav toggle on wider screens */
+@media (min-width: 769px) {
+  .nav-toggle {
+    display: none !important;
   }
 }
