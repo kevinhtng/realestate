@@ -558,21 +558,23 @@ section {
     scroll-padding-left: 1rem;
   }
 }
-/* Fix review carousel width on mobile */
-@media (max-width: 768px) {
-  #reviews-carousel {
-    width: 100%;  /* use 100% of container, not viewport */
-  }
-
-  /* Make sure nav toggle button only shows on mobile */
-  .nav-toggle {
-    display: block;
-  }
-}
-
-/* Hide nav toggle on wider screens */
+/* Force hide nav toggle on desktop */
 @media (min-width: 769px) {
   .nav-toggle {
     display: none !important;
+  }
+}
+/* Constrain reviews carousel on mobile */
+@media (max-width: 768px) {
+  #reviews-carousel {
+    width: 100%;           /* full container width */
+    max-width: 100%;       /* prevent overflow */
+    box-sizing: border-box; /* padding included */
+  }
+
+  .review-card {
+    width: 90vw;           /* limit cards to viewport width with some margin */
+    max-width: 280px;      /* max width from your design */
+    min-width: 200px;      /* avoid cards too narrow */
   }
 }
