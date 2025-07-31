@@ -426,8 +426,9 @@ canvas#starfield {
 
 .review-card {
   flex: 0 0 auto;
-  width: 280px;
-  max-width: 100%; /* added */
+  width: 90vw;              /* Responsive width on mobile */
+  max-width: 280px;         /* Prevents it from growing too wide */
+  min-width: 240px;         /* Prevents it from being too narrow */
   background: rgba(255, 255, 255, 0.05);
   border-radius: 8px;
   box-shadow: 0 0 6px rgba(255, 255, 255, 0.1);
@@ -435,10 +436,9 @@ canvas#starfield {
   font-style: italic;
   color: #eee;
   scroll-snap-align: start;
-  word-wrap: break-word;
+  word-wrap: break-word;    /* Ensures long words break */
+  white-space: normal;      /* Allows multi-line wrapping */
   overflow-wrap: break-word;
-  hyphens: auto;
-  white-space: normal; /* added */
 }
 
 .review-card .quote {
@@ -570,11 +570,5 @@ section {
     width: 100%;           /* full container width */
     max-width: 100%;       /* prevent overflow */
     box-sizing: border-box; /* padding included */
+    overflow-x: auto;
   }
-
-  .review-card {
-    width: 90vw;           /* limit cards to viewport width with some margin */
-    max-width: 280px;      /* max width from your design */
-    min-width: 200px;      /* avoid cards too narrow */
-  }
-}
