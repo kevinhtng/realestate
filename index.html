@@ -10,12 +10,33 @@
 
   <canvas id="starfield"></canvas>
 
-  <header>
-    <h1>Kevin Nguyen - Closed Deals Portfolio</h1>
-    <p>Showing my past closed deals. Click on any deal to visit its HAR listing.</p>
-  </header>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-brand">Kevin Nguyen Realty</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span class="hamburger"></span>
+      </button>
+      <ul class="nav-menu">
+        <li><a href="#hero" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About Me</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#deals" class="nav-link">Closed Deals</a></li>
+        <li><a href="#reviews" class="nav-link">Reviews</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 
-  <section class="about-me">
+  <!-- Hero -->
+  <section id="hero" class="hero">
+    <h1>Kevin Nguyen Realty</h1>
+    <p>Your trusted partner for closing successful real estate deals in Houston and beyond.</p>
+    <a href="#contact" class="btn-primary">Get Your Free Home Valuation</a>
+  </section>
+
+  <!-- About Me -->
+  <section id="about" class="about-me section-container">
     <h2>About Me</h2>
     <p>
       Hi, I’m Kevin Nguyen, a dedicated real estate agent serving Houston and surrounding areas.
@@ -24,34 +45,85 @@
     </p>
   </section>
 
-  <section id="carousel-container">
-    <button id="nav-left" class="nav-button" aria-label="Scroll Left">🐻</button>
-    <div id="carousel"></div>
-    <button id="nav-right" class="nav-button" aria-label="Scroll Right">🐻</button>
+  <!-- Services (Accordion) -->
+  <section id="services" class="section-container">
+    <h2>Services</h2>
+
+    <div class="accordion">
+
+      <button class="accordion-toggle" aria-expanded="false">Buying Assistance</button>
+      <div class="accordion-content" hidden>
+        <p>Guiding you through the buying process with expert market analysis and negotiation skills.</p>
+      </div>
+
+      <button class="accordion-toggle" aria-expanded="false">Selling Your Property</button>
+      <div class="accordion-content" hidden>
+        <p>Marketing your home effectively to get top dollar and a smooth closing process.</p>
+      </div>
+
+      <button class="accordion-toggle" aria-expanded="false">Leasing Services</button>
+      <div class="accordion-content" hidden>
+        <p>Helping landlords find reliable tenants and managing lease agreements efficiently.</p>
+      </div>
+
+    </div>
   </section>
 
-  <section>
+  <!-- Closed Deals Carousel -->
+  <section id="deals" class="section-container">
+    <h2>Closed Deals</h2>
+    <div id="carousel-container">
+      <button id="nav-left" class="nav-button" aria-label="Scroll Left">‹</button>
+      <div id="carousel" tabindex="0" aria-label="Closed deals carousel"></div>
+      <button id="nav-right" class="nav-button" aria-label="Scroll Right">›</button>
+    </div>
+  </section>
+
+  <!-- Reviews Carousel -->
+  <section id="reviews" class="section-container">
+    <h2>Client Reviews</h2>
+    <div id="reviews-carousel-container">
+      <button id="reviews-nav-left" class="nav-button" aria-label="Previous review">‹</button>
+      <div id="reviews-carousel" tabindex="0" aria-label="Client reviews carousel"></div>
+      <button id="reviews-nav-right" class="nav-button" aria-label="Next review">›</button>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <section id="contact" class="section-container">
     <h2>Contact Me</h2>
     <form
       action="https://formspree.io/f/mzzvvejb"
       method="POST"
+      class="contact-form"
     >
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" required />
+
       <label for="email">Your Email:</label>
       <input type="email" id="email" name="email" required />
 
-      <label for="message">Your Message:</label>
-      <textarea id="message" name="message" rows="4" required></textarea>
+      <label for="phone">Your Phone (optional):</label>
+      <input type="tel" id="phone" name="phone" />
 
-      <button type="submit">Send</button>
+      <button type="submit" class="btn-primary">Send</button>
     </form>
   </section>
 
+  <!-- Footer -->
   <footer>
-    <p>Kevin Nguyen - Real Estate Agent</p>
+    <p><a href="https://www.iabs.state.tx.us/" target="_blank" rel="noopener noreferrer">IABS - Information About Brokerage Services</a></p>
     <p>Email: kevinngrealtor@gmail.com | Phone: (832) 525-3584</p>
     <p>Licensed in Texas</p>
+    <p class="social-links">
+      <a href="https://facebook.com/kevinngrealtor" target="_blank" rel="noopener noreferrer" aria-label="Facebook">📘</a>
+      <a href="https://twitter.com/kevinngrealtor" target="_blank" rel="noopener noreferrer" aria-label="Twitter">🐦</a>
+      <a href="https://linkedin.com/in/kevinngrealtor" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">🔗</a>
+    </p>
   </footer>
 
   <script src="stars.js"></script>
+  <script src="scripts.js"></script>
+
 </body>
 </html>
