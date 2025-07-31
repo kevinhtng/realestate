@@ -192,3 +192,57 @@ footer {
   margin-top: 3rem;
 }
 
+/* Mobile styles */
+@media (max-width: 768px) {
+  /* Fluid typography */
+  h1 {
+    font-size: clamp(1.5rem, 6vw, 2.25rem);
+  }
+  p, .about-me p {
+    font-size: clamp(1rem, 4vw, 1.15rem);
+  }
+
+  /* Carousel snap and flexible card width */
+  #carousel {
+    scroll-snap-type: x mandatory;
+  }
+  .deal-card {
+    scroll-snap-align: start;
+    width: 60vw; /* card width adjusts to 60% of viewport width */
+  }
+
+  /* Overlay nav buttons */
+  #carousel-container {
+    position: relative; /* needed for absolute nav buttons */
+  }
+  .nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+  #nav-left {
+    left: 5px;
+  }
+  #nav-right {
+    right: 5px;
+  }
+
+  /* Form adjustments */
+  form input,
+  form textarea,
+  form button {
+    width: 100%;
+    max-width: none;
+  }
+  form button {
+    margin-top: 1.5rem;
+  }
+
+  /* Section spacing */
+  section,
+  header,
+  footer {
+    padding: 1.5rem 1rem;
+  }
+}
