@@ -8,7 +8,7 @@ navToggle.addEventListener('click', () => {
   navMenu.classList.toggle('open');
 });
 
-// Close hamburger menu when clicking nav links + smooth scroll
+// Close hamburger menu when clicking nav links + smooth scroll with offset
 document.querySelectorAll('.nav-link').forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
@@ -25,8 +25,17 @@ document.querySelectorAll('.nav-link').forEach(link => {
 
     // Delay scroll to allow nav to finish closing
     setTimeout(() => {
-      targetSection?.scrollIntoView({ behavior: 'smooth' });
-    }, 300); // Adjust if needed to match your CSS animation timing
+      if (!targetSection) return;
+
+      const headerOffset = 80; // adjust this to your fixed header height in px
+      const elementPosition = targetSection.getBoundingClientRect().top;
+      const offsetPosition = window.pageYOffset + elementPosition - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }, 300); // match this delay with your CSS animation duration
   });
 });
 
