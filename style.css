@@ -213,6 +213,29 @@ canvas#starfield {
   user-select: text;
 }
 
+#about-full {
+  display: none;
+  margin-top: 10px;
+}
+
+#readMoreBtn {
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+
+#readMoreBtn:hover {
+  background-color: #ddd;
+}
+
 /* Accordion */
 .accordion {
   max-width: 700px;
@@ -483,10 +506,12 @@ footer a:focus {
   margin: 0 0.5rem;
   text-decoration: none;
 }
+
 /* Offset anchor jumps for sticky navbar */
 section {
-  scroll-margin-top: 56px; /* height of your sticky navbar */
+  scroll-margin-top: 70px; /* height of your sticky navbar */
 }
+
 /* Responsive typography & layout adjustments */
 @media (max-width: 768px) {
   h1 {
@@ -500,8 +525,4 @@ section {
   #carousel, #reviews-carousel {
     scroll-padding-left: 1rem;
   }
-}
-
-section {
-  scroll-margin-top: 70px;
 }
