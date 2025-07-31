@@ -57,6 +57,8 @@ canvas#starfield {
   gap: 1rem;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
+  z-index: 20; /* Ensure overlays starfield and other content */
 }
 
 .nav-link {
@@ -87,6 +89,7 @@ canvas#starfield {
   position: relative;
   width: 44px;
   height: 44px;
+  user-select: none;
 }
 
 /* Hamburger lines centered and consistent */
@@ -165,7 +168,7 @@ canvas#starfield {
   max-width: 900px;
   margin: 2rem auto;
   padding: 0 1rem;
-  overflow-x: hidden; /* ADDED to prevent horizontal overflow from children */
+  overflow-x: hidden; /* prevent horizontal overflow from children */
 }
 
 /* Hero Section */
@@ -207,7 +210,7 @@ canvas#starfield {
 }
 
 /* About Me */
-.about-me p {
+#about p {
   font-size: 1.15rem;
   line-height: 1.6;
   user-select: text;
@@ -262,6 +265,11 @@ canvas#starfield {
   background-color: #444;
 }
 
+.accordion-toggle:focus {
+  outline: 3px solid #888;
+  outline-offset: 2px;
+}
+
 .accordion-content {
   background: rgba(255,255,255,0.05);
   padding: 0.85rem 1.25rem;
@@ -279,8 +287,7 @@ canvas#starfield {
   gap: 1rem;
   padding: 0 1rem;
   position: relative;
-  overflow-x: hidden; /* ADDED: prevent container horizontal overflow */
-  max-width: 100vw; /* ADDED: limit max width to viewport */
+  overflow-x: hidden; /* prevent container horizontal overflow */
 }
 
 #carousel {
@@ -381,8 +388,7 @@ canvas#starfield {
   gap: 1rem;
   padding: 0 1rem;
   position: relative;
-  overflow-x: hidden; /* ADDED: prevent horizontal overflow */
-  max-width: 100vw; /* ADDED: limit max width */
+  overflow-x: hidden; /* prevent horizontal overflow */
 }
 
 #reviews-carousel {
@@ -518,7 +524,7 @@ section {
     font-size: clamp(1.5rem, 6vw, 2.5rem);
   }
 
-  p, .about-me p {
+  p, #about p {
     font-size: clamp(1rem, 4vw, 1.15rem);
   }
 
