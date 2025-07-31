@@ -409,7 +409,7 @@ canvas#starfield {
   overflow-x: auto;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
-  padding: 1rem 0;
+  padding: 1rem 0.5rem 1rem 0.5rem;
   -webkit-overflow-scrolling: touch;
   outline: none;
   box-sizing: border-box;
