@@ -407,6 +407,7 @@ canvas#starfield {
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   outline: none;
+  min-width: 0;
 }
 
 #reviews-carousel::-webkit-scrollbar {
@@ -427,6 +428,9 @@ canvas#starfield {
   font-style: italic;
   color: #eee;
   scroll-snap-align: start;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .review-card .quote {
