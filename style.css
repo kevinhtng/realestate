@@ -418,7 +418,7 @@ canvas#starfield {
 }
 /* Shift the first review card slightly left */
 #reviews-carousel .review-card:first-child {
-  margin-left: -0.5rem;
+  margin-left: -1.5rem;
 }
 #reviews-carousel::-webkit-scrollbar {
   display: none;
