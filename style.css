@@ -409,14 +409,17 @@ canvas#starfield {
   overflow-x: auto;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
-  padding: 1rem 0.5rem 1rem 0.5rem;
+  padding: 1rem 0.25rem 1rem 0rem; /* smaller right, zero left */
   -webkit-overflow-scrolling: touch;
   outline: none;
   box-sizing: border-box;
   width: 100%;
   max-width: 100%;
 }
-
+/* Shift the first review card slightly left */
+#reviews-carousel .review-card:first-child {
+  margin-left: -0.5rem;
+}
 #reviews-carousel::-webkit-scrollbar {
   display: none;
 }
