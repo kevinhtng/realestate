@@ -35,7 +35,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
         top: offsetPosition,
         behavior: 'smooth'
       });
-    }, 300); // match this delay with your CSS animation duration
+    }, 300);
   });
 });
 
@@ -201,22 +201,20 @@ reviewsBtnRight.addEventListener('click', () => {
   reviewsCarousel.scrollBy({left: 300, behavior: 'smooth'});
 });
 // Add a Read More Button for About Me Section
-<script>
-  const readMoreBtn = document.getElementById('readMoreBtn');
-  const aboutFull = document.getElementById('about-full');
-  const dots = document.getElementById('dots');
+const readMoreBtn = document.getElementById('readMoreBtn');
+const aboutFull = document.getElementById('about-full');
+const dots = document.getElementById('dots');
 
-  readMoreBtn.addEventListener('click', () => {
-    const isVisible = aboutFull.classList.contains('expanded');
+readMoreBtn.addEventListener('click', () => {
+  const isExpanded = aboutFull.classList.contains('expanded');
 
-    if (isVisible) {
-      aboutFull.classList.remove('expanded');
-      readMoreBtn.textContent = 'Read More';
-      dots.style.display = 'inline';
-    } else {
-      aboutFull.classList.add('expanded');
-      readMoreBtn.textContent = 'Read Less';
-      dots.style.display = 'none';
-    }
-  });
-</script>
+  if (isExpanded) {
+    aboutFull.classList.remove('expanded');
+    readMoreBtn.textContent = 'Read More';
+    dots.style.display = 'inline';
+  } else {
+    aboutFull.classList.add('expanded');
+    readMoreBtn.textContent = 'Read Less';
+    dots.style.display = 'none';
+  }
+});
