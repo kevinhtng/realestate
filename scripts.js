@@ -10,7 +10,19 @@ navToggle.addEventListener('click', () => {
 
 // Close hamburger menu when clicking nav links
 document.querySelectorAll('.nav-link').forEach(link => {
-  link.addEventListener('click', () => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault(); // Prevent instant jump
+
+    // Get the target ID from href attribute
+    const targetId = link.getAttribute('href').slice(1);
+    const targetSection = document.getElementById(targetId);
+
+    if (targetSection) {
+      // Smooth scroll to section
+      targetSection.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Close the menu
     navToggle.setAttribute('aria-expanded', false);
     navToggle.classList.remove('open');
     navMenu.classList.remove('open');
