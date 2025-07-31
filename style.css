@@ -1,4 +1,7 @@
-/* Global Styles */
+/* Reset & base */
+* {
+  box-sizing: border-box;
+}
 body {
   margin: 0;
   background: black;
@@ -6,8 +9,12 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   overflow-x: hidden;
   line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
+/* Starfield canvas */
 canvas#starfield {
   position: fixed;
   top: 0;
@@ -15,58 +22,236 @@ canvas#starfield {
   z-index: -1;
   width: 100%;
   height: 100%;
+  pointer-events: none;
 }
 
-/* Header */
-header {
-  padding: 2rem 1rem;
-  text-align: center;
-  background-color: rgba(0, 0, 0, 0.75);
-  border-bottom: 1px solid #444;
+/* Navigation */
+.navbar {
+  background: rgba(0,0,0,0.85);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 1px 5px rgba(255,255,255,0.1);
 }
 
-header h1 {
+.nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+}
+
+.nav-brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: white;
+  text-decoration: none;
+  user-select: none;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
   margin: 0;
-  font-size: 2.25rem;
+  padding: 0;
 }
 
-header p {
-  margin-top: 0.5rem;
-  font-size: 1.1rem;
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 1.125rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  background-color: #444;
+}
+
+/* Hamburger menu button */
+.nav-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none;
+  padding: 0.5rem;
+  position: relative;
+  width: 44px;
+  height: 44px;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  display: block;
+  background: white;
+  height: 4px;
+  border-radius: 2px;
+  position: absolute;
+  width: 28px;
+  left: 8px;
+  transition: all 0.3s ease;
+}
+
+.hamburger {
+  top: 20px;
+}
+
+.hamburger::before {
+  top: 12px;
+}
+
+.hamburger::after {
+  top: 28px;
+}
+
+/* When toggled open */
+.nav-toggle.open .hamburger {
+  background: transparent;
+}
+
+.nav-toggle.open .hamburger::before {
+  top: 20px;
+  transform: rotate(45deg);
+}
+
+.nav-toggle.open .hamburger::after {
+  top: 20px;
+  transform: rotate(-45deg);
+}
+
+/* Mobile nav menu */
+@media (max-width: 768px) {
+  .nav-menu {
+    position: fixed;
+    top: 56px;
+    right: 0;
+    background: rgba(0,0,0,0.95);
+    width: 70vw;
+    max-width: 280px;
+    height: calc(100vh - 56px);
+    flex-direction: column;
+    padding: 1rem 0;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    gap: 0;
+  }
+  .nav-menu.open {
+    transform: translateX(0);
+  }
+  .nav-link {
+    padding: 1rem 1.5rem;
+    font-size: 1.25rem;
+  }
+  .nav-toggle {
+    display: block;
+  }
+}
+
+/* Section container */
+.section-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 3rem 1rem 4rem;
+  user-select: none;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  margin-bottom: 1.75rem;
   color: #ddd;
 }
 
-/* About Me Section */
-.about-me {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 1.5rem 2rem;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-  color: white;
-  font-size: 1.15rem;
-}
-
-.about-me h2 {
-  margin-top: 0;
-  margin-bottom: 1rem;
+.btn-primary {
+  background-color: white;
+  color: black;
   font-weight: 700;
-  font-size: 2rem;
-  text-align: center;
+  padding: 0.85rem 2.5rem;
+  font-size: 1.125rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  user-select: none;
+  transition: background-color 0.3s ease;
 }
 
-/* Carousel Container */
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #ddd;
+}
+
+/* About Me */
+.about-me p {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  user-select: text;
+}
+
+/* Accordion */
+.accordion {
+  max-width: 700px;
+  margin: 1rem auto;
+}
+
+.accordion-toggle {
+  width: 100%;
+  background: #111;
+  color: white;
+  border: none;
+  padding: 1rem 1.25rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  text-align: left;
+  border-radius: 6px;
+  cursor: pointer;
+  user-select: none;
+  margin-bottom: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.accordion-toggle[aria-expanded="true"] {
+  background-color: #444;
+}
+
+.accordion-content {
+  background: rgba(255,255,255,0.05);
+  padding: 0.85rem 1.25rem;
+  border-radius: 0 0 6px 6px;
+  margin-bottom: 1rem;
+  user-select: text;
+}
+
+/* Closed Deals Carousel */
 #carousel-container {
   max-width: 900px;
-  margin: 2rem auto;
+  margin: 1rem auto 3rem;
   display: flex;
   align-items: center;
   gap: 1rem;
   padding: 0 1rem;
+  position: relative;
 }
 
-/* Carousel */
 #carousel {
   overflow-x: auto;
   scroll-behavior: smooth;
@@ -74,19 +259,19 @@ header p {
   gap: 1rem;
   padding: 1rem 0;
   flex-grow: 1;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  outline: none;
 }
 
-/* Hide scrollbar for webkit browsers */
 #carousel::-webkit-scrollbar {
   display: none;
 }
-/* Hide scrollbar for other browsers */
 #carousel {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
 
-/* Deal Card */
 .deal-card {
   flex: 0 0 auto;
   width: 180px;
@@ -96,6 +281,7 @@ header p {
   text-align: center;
   transition: transform 0.3s ease;
   cursor: pointer;
+  scroll-snap-align: start;
 }
 
 .deal-card:hover {
@@ -107,7 +293,7 @@ header p {
   height: 120px;
   object-fit: cover;
   border-radius: 8px 8px 0 0;
-  background: #222; /* fallback bg in case image fails */
+  background: #222;
 }
 
 .deal-caption {
@@ -117,14 +303,14 @@ header p {
   color: #eee;
 }
 
-/* Navigation Buttons */
+/* Navigation Buttons for carousels */
 .nav-button {
   background: #111;
   color: white;
   border: 1px solid #555;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   font-size: 1.5rem;
   cursor: pointer;
   user-select: none;
@@ -134,12 +320,83 @@ header p {
   justify-content: center;
 }
 
-.nav-button:hover {
+.nav-button:hover,
+.nav-button:focus {
   background-color: #444;
 }
 
-/* Form Styles */
-section form {
+#nav-left {
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+}
+
+#nav-right {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+}
+
+/* Reviews Carousel */
+#reviews-carousel-container {
+  max-width: 900px;
+  margin: 1rem auto 3rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 1rem;
+  position: relative;
+}
+
+#reviews-carousel {
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0;
+  flex-grow: 1;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  outline: none;
+}
+
+#reviews-carousel::-webkit-scrollbar {
+  display: none;
+}
+#reviews-carousel {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.review-card {
+  flex: 0 0 auto;
+  width: 280px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  font-style: italic;
+  color: #eee;
+  scroll-snap-align: start;
+}
+
+.review-card .quote {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+}
+
+.review-card .reviewer {
+  font-weight: 700;
+  font-style: normal;
+  text-align: right;
+}
+
+/* Contact Form */
+.contact-form {
   max-width: 600px;
   margin: 2rem auto;
   display: flex;
@@ -150,6 +407,7 @@ form label {
   margin: 1rem 0 0.3rem;
   font-weight: 600;
   color: white;
+  user-select: none;
 }
 
 form input,
@@ -176,9 +434,11 @@ form button {
   font-weight: 700;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  user-select: none;
 }
 
-form button:hover {
+form button:hover,
+form button:focus {
   background-color: #ddd;
 }
 
@@ -189,60 +449,43 @@ footer {
   font-size: 0.9rem;
   color: #ccc;
   border-top: 1px solid #444;
-  margin-top: 3rem;
+  margin-top: auto;
+  user-select: none;
 }
 
-/* Mobile styles */
+footer a {
+  color: #ccc;
+  text-decoration: underline;
+}
+
+footer a:hover,
+footer a:focus {
+  color: white;
+}
+
+/* Social links */
+.social-links {
+  margin-top: 0.5rem;
+  font-size: 1.5rem;
+  user-select: none;
+}
+.social-links a {
+  margin: 0 0.5rem;
+  text-decoration: none;
+}
+
+/* Responsive typography & layout adjustments */
+
 @media (max-width: 768px) {
-  /* Fluid typography */
   h1 {
-    font-size: clamp(1.5rem, 6vw, 2.25rem);
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
   }
+
   p, .about-me p {
     font-size: clamp(1rem, 4vw, 1.15rem);
   }
 
-  /* Carousel snap and flexible card width */
-  #carousel {
-    scroll-snap-type: x mandatory;
-  }
-  .deal-card {
-    scroll-snap-align: start;
-    width: 60vw; /* card width adjusts to 60% of viewport width */
-  }
-
-  /* Overlay nav buttons */
-  #carousel-container {
-    position: relative; /* needed for absolute nav buttons */
-  }
-  .nav-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1;
-  }
-  #nav-left {
-    left: 5px;
-  }
-  #nav-right {
-    right: 5px;
-  }
-
-  /* Form adjustments */
-  form input,
-  form textarea,
-  form button {
-    width: 100%;
-    max-width: none;
-  }
-  form button {
-    margin-top: 1.5rem;
-  }
-
-  /* Section spacing */
-  section,
-  header,
-  footer {
-    padding: 1.5rem 1rem;
+  #carousel, #reviews-carousel {
+    scroll-padding-left: 1rem;
   }
 }
