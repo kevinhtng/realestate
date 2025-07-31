@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Read More Button</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+
+    #about-preview {
+      font-size: 1.15rem;
+    }
+
+    #dots {
+      display: inline;
+    }
+
+    #about-full {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.4s ease;
+    }
+
+    #about-full.expanded {
+      max-height: 1000px;
+    }
+
+    #readMoreBtn {
+      margin-top: 1rem;
+      padding: 0.6rem 1.2rem;
+      font-size: 1rem;
+      background-color: white;
+      color: black;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p id="about-preview">
+      Hi, I’m Kevin Hoang Nguyen — a dedicated real estate professional with a deep understanding of the Houston metropolitan area.
+      <span id="dots">...</span>
+    </p>
+
+    <div id="about-full">
+      <p>
+        I’ve lived all over Houston — Alief, Sugar Land, Cypress, Richmond, Fulshear, and more. Helping 30+ clients has been a true privilege.
+      </p>
+      <p>
+        I bring youthful energy, a cybersecurity degree, and a tech-driven approach to real estate.
+      </p>
+    </div>
+
+    <button id="readMoreBtn" aria-expanded="false">Read More</button>
+  </section>
+
+  <script>
+    const readMoreBtn = document.getElementById('readMoreBtn');
+    const aboutFull = document.getElementById('about-full');
+    const dots = document.getElementById('dots');
+
+    readMoreBtn.addEventListener('click', () => {
+      const isExpanded = aboutFull.classList.contains('expanded');
+
+      if (isExpanded) {
+        aboutFull.classList.remove('expanded');
+        readMoreBtn.textContent = 'Read More';
+        dots.style.display = 'inline';
+      } else {
+        aboutFull.classList.add('expanded');
+        readMoreBtn.textContent = 'Read Less';
+        dots.style.display = 'none';
+      }
+    });
+  </script>
+
+</body>
+</html>
