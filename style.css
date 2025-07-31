@@ -404,16 +404,17 @@ canvas#starfield {
 }
 
 #reviews-carousel {
-  overflow-x: auto;
-  scroll-behavior: smooth;
   display: flex;
   gap: 1rem;
-  padding: 1rem 0;
-  flex-grow: 1;
+  overflow-x: auto;
+  scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
+  padding: 1rem 0;
   -webkit-overflow-scrolling: touch;
   outline: none;
-  min-width: 0;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
 }
 
 #reviews-carousel::-webkit-scrollbar {
@@ -426,9 +427,9 @@ canvas#starfield {
 
 .review-card {
   flex: 0 0 auto;
-  width: 90vw;              /* Responsive width on mobile */
-  max-width: 280px;         /* Prevents it from growing too wide */
-  min-width: 240px;         /* Prevents it from being too narrow */
+  width: 90vw;               /* Responsive width relative to viewport */
+  max-width: 280px;          /* Upper limit for large screens */
+  min-width: 240px;          /* Lower limit for small screens */
   background: rgba(255, 255, 255, 0.05);
   border-radius: 8px;
   box-shadow: 0 0 6px rgba(255, 255, 255, 0.1);
@@ -436,9 +437,10 @@ canvas#starfield {
   font-style: italic;
   color: #eee;
   scroll-snap-align: start;
-  word-wrap: break-word;    /* Ensures long words break */
-  white-space: normal;      /* Allows multi-line wrapping */
+  word-wrap: break-word;
+  white-space: normal;
   overflow-wrap: break-word;
+  box-sizing: border-box;   /* Important: includes padding in width */
 }
 
 .review-card .quote {
@@ -564,11 +566,3 @@ section {
     display: none !important;
   }
 }
-/* Constrain reviews carousel on mobile */
-@media (max-width: 768px) {
-  #reviews-carousel {
-    width: 100%;           /* full container width */
-    max-width: 100%;       /* prevent overflow */
-    box-sizing: border-box; /* padding included */
-    overflow-x: auto;
-  }
