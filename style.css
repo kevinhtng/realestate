@@ -84,7 +84,7 @@ canvas#starfield {
   background: none;
   border: none;
   cursor: pointer;
-  display: none;
+  display: none; /* hide on desktop */
   padding: 0.5rem;
   position: relative;
   width: 44px;
@@ -159,7 +159,7 @@ canvas#starfield {
     font-size: 1.25rem;
   }
   .nav-toggle {
-    display: block;
+    display: block; /* show hamburger on mobile */
   }
 }
 
@@ -172,6 +172,12 @@ canvas#starfield {
   padding: 0 1rem;
   overflow-x: hidden;
 }
+
+/* Ensure reviews container is relative for nav arrow positioning */
+#reviews-carousel-container {
+  position: relative;
+}
+
 /* Hero Section */
 .hero {
   text-align: center;
@@ -393,7 +399,7 @@ canvas#starfield {
   align-items: center;
   gap: 1rem;
   padding: 0 1rem;
-  position: relative;
+  position: relative; /* added */
   overflow-x: hidden; /* prevent horizontal overflow */
 }
 
@@ -421,6 +427,7 @@ canvas#starfield {
 .review-card {
   flex: 0 0 auto;
   width: 280px;
+  max-width: 100%; /* added */
   background: rgba(255, 255, 255, 0.05);
   border-radius: 8px;
   box-shadow: 0 0 6px rgba(255, 255, 255, 0.1);
@@ -431,6 +438,7 @@ canvas#starfield {
   word-wrap: break-word;
   overflow-wrap: break-word;
   hyphens: auto;
+  white-space: normal; /* added */
 }
 
 .review-card .quote {
@@ -442,6 +450,14 @@ canvas#starfield {
   font-weight: 700;
   font-style: normal;
   text-align: right;
+}
+
+/* Review card responsive width */
+@media (max-width: 768px) {
+  .review-card {
+    width: 90vw; /* almost full width on mobile */
+    max-width: none;
+  }
 }
 
 /* Contact Form */
