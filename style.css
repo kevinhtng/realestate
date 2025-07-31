@@ -69,7 +69,7 @@ canvas#starfield {
   user-select: none;
 }
 
-/* Smaller, neater highlight on focus/active */
+/* Smaller, neater highlight on hover/focus/active */
 .nav-link:hover,
 .nav-link:focus,
 .nav-link:active {
@@ -480,7 +480,6 @@ footer a:focus {
 }
 
 /* Responsive typography & layout adjustments */
-
 @media (max-width: 768px) {
   h1 {
     font-size: clamp(1.5rem, 6vw, 2.5rem);
