@@ -1,213 +1,55 @@
-// Deal data: number, HAR link, image try loaded from HAR URL (same as link)
-const deals = [
-  { number: 48, url: "https://www.har.com/homedetail/18251-river-sage-dr-houston-tx-77084/3713180?sid=9933408&cid=Kevinhnguyen" },
-  { number: 47, url: "https://www.har.com/homedetail/9607-wakefield-village-dr-houston-tx-77095/3709626?sid=9979407&cid=Kevinhnguyen" },
-  { number: 46, url: "https://www.har.com/homedetail/0-jennings-creek-ct-fulshear-tx-77441/14453195?sid=9979408&cid=Kevinhnguyen" },
-  { number: 45, url: "https://www.har.com/homedetail/6920-flintlock-rd-houston-tx-77040/10771984?sid=9861146&cid=Kevinhnguyen" },
-  { number: 44, url: "https://www.har.com/homedetail/5615-afton-ridge-ln-houston-tx-77084/3680396?sid=9561055&cid=Kevinhnguyen" },
-  { number: 43, url: "https://www.2100westloopsouth.com/" },
-  { number: 42, url: "https://www.har.com/homedetail/6920-flintlock-rd-houston-tx-77040/10771984?sid=9560043&cid=Kevinhnguyen" },
-  { number: 41, url: "https://www.har.com/homedetail/3-spyglass-ct-jersey-village-tx-77064/3661710?sid=9696215&cid=Kevinhnguyen" },
-  { number: 40, url: "https://www.har.com/homedetail/700-thicket-ln-102-houston-tx-77079/3501159?sid=9659685&cid=Kevinhnguyen" },
-  { number: 39, url: "https://www.har.com/homedetail/19307-morning-news-ln-richmond-tx-77407/10431790?sid=9535565&cid=Kevinhnguyen" },
-  { number: 38, url: "https://www.har.com/homedetail/3327-aspen-stream-dr-richmond-tx-77406/16854440?sid=9276689&cid=Kevinhnguyen" },
-  { number: 37, url: "https://www.har.com/homedetail/6920-flintlock-rd-houston-tx-77040/10771984?sid=9359150&cid=Kevinhnguyen" },
-  { number: 36, url: "https://www.har.com/homedetail/4324-spring-valley-rd-houston-tx-77041/16307958?sid=9028201&cid=Kevinhnguyen" },
-  { number: 35, url: "https://www.har.com/homedetail/0-jennings-creek-ct-fulshear-tx-77441/14453195?sid=8956650&cid=Kevinhnguyen" },
-  { number: 34, url: "https://www.har.com/homedetail/21627-bay-palms-dr-katy-tx-77449/3506849?sid=8661350&cid=Kevinhnguyen" },
-  { number: 33, url: "https://www.har.com/homedetail/16506-willingham-way-houston-tx-77095/11961115?sid=8605191&cid=Kevinhnguyen" },
-  { number: 32, url: "https://www.capemodernliving.com/" },
-  { number: 31, url: "https://www.har.com/homedetail/2306-slate-ridge-ln-katy-tx-77494/2427898?sid=8543795&cid=Kevinhnguyen" },
-  { number: 30, url: "https://www.wm-stoneloch.com/" },
-  { number: 29, url: "https://www.har.com/homedetail/3262-hunters-glen-dr-missouri-city-tx-77459/8788438?sid=8574576&cid=Kevinhnguyen" },
-  { number: 28, url: "https://www.har.com/homedetail/2823-whispering-ct-sugar-land-tx-77498/2478129?sid=8488261&cid=Kevinhnguyen" },
-  { number: 27, url: "https://www.har.com/homedetail/18251-river-sage-dr-houston-tx-77084/3713180?sid=8472939&cid=Kevinhnguyen" },
-  { number: 26, url: "https://www.har.com/homedetail/8435-e-copper-lakes-dr-houston-tx-77095/7761069?sid=8465433&cid=Kevinhnguyen" },
-  { number: 25, url: "https://www.har.com/homedetail/9607-wakefield-village-dr-houston-tx-77095/3709626?sid=8419991&cid=Kevinhnguyen" },
-  { number: 24, url: "https://www.har.com/homedetail/700-thicket-ln-102-houston-tx-77079/3501159?sid=8451466&cid=Kevinhnguyen" },
-  { number: 23, url: "https://www.har.com/homedetail/18251-river-sage-dr-houston-tx-77084/3713180?sid=8314633&cid=Kevinhnguyen" },
-  { number: 22, url: "https://www.har.com/homedetail/2932-cordova-hill-dr-katy-tx-77493/16664537?sid=7982390&cid=Kevinhnguyen" },
-  { number: 21, url: "https://www.har.com/homedetail/26958-mustang-retreat-ln-katy-tx-77494/12359998?sid=7925524&cid=Kevinhnguyen" },
-  { number: 20, url: "https://www.har.com/homedetail/19726-terrazza-lake-ln-richmond-tx-77407/13527534?sid=7922116&cid=Kevinhnguyen" },
-  { number: 19, url: "https://www.har.com/homedetail/6920-flintlock-rd-houston-tx-77040/10771984?sid=7905790&cid=Kevinhnguyen" },
-  { number: 18, url: "https://www.har.com/homedetail/8801-hammerly-blvd-1207-houston-tx-77080/10970610?sid=7800525&cid=Kevinhnguyen" },
-  { number: 17, url: "https://www.har.com/homedetail/4324-spring-valley-rd-houston-tx-77041/16307958?sid=7804335&cid=Kevinhnguyen" },
-  { number: 16, url: "https://www.10xwoodwaysquare.com/?utm_knock=gmb" },
-  { number: 15, url: "https://www.har.com/homedetail/700-thicket-ln-102-houston-tx-77079/3501159?sid=7565065&cid=Kevinhnguyen" },
-  { number: 14, url: "https://www.har.com/homedetail/6319-nullarbor-ct-katy-tx-77449/3707044?sid=7275513&cid=Kevinhnguyen" },
-  { number: 13, url: "https://www.har.com/homedetail/23138-true-fortune-dr-katy-tx-77449/15839815?sid=7359466&cid=Kevinhnguyen" },
-  { number: 12, url: "https://www.har.com/homedetail/20918-oat-straw-ln-katy-tx-77449/16121701?sid=7238572&cid=Kevinhnguyen" },
-  { number: 11, url: "https://www.har.com/homedetail/4902-lake-catherine-ct-richmond-tx-77407/11172229?sid=7162134&cid=Kevinhnguyen" },
-  { number: 10, url: "https://www.har.com/homedetail/15407-parkview-st-houston-tx-77071/3315320?sid=7061843&cid=Kevinhnguyen" },
-  { number: 9, url: "https://www.har.com/homedetail/13726-sutton-glen-ln-houston-tx-77047/11583865?sid=7050377&cid=Kevinhnguyen" },
-  { number: 8, url: "https://www.har.com/homedetail/8807-oak-ivy-ln-richmond-tx-77407/16081102?sid=6910498&cid=Kevinhnguyen" },
-  { number: 7, url: "https://www.har.com/homedetail/8118-autumn-trace-ct-houston-tx-77083/3744687?sid=6829357&cid=Kevinhnguyen" },
-  { number: 6, url: "https://www.har.com/homedetail/2506-radcliffe-dr-sugar-land-tx-77498/9456237?sid=6806147&cid=Kevinhnguyen" },
-  { number: 5, url: "https://www.har.com/homedetail/14615-perthshire-rd-houston-tx-77079/10687714?sid=6713891&cid=Kevinhnguyen" },
-  { number: 4, url: "https://www.har.com/homedetail/700-thicket-ln-102-houston-tx-77079/3501159?sid=6621798&cid=Kevinhnguyen" },
-  { number: 3, url: "https://www.har.com/homedetail/16607-jamaica-cove-rd-jamaica-beach-tx-77554/2628958?sid=6462007&cid=Kevinhnguyen" },
-  { number: 2, url: "https://www.har.com/homedetail/7307-ferrara-dr-houston-tx-77083/8930273?sid=6567600&cid=Kevinhnguyen" }
-];
-
-// Select carousel container
-const carousel = document.getElementById('carousel');
-
-// Populate carousel with deal cards
-deals.forEach(deal => {
-  const card = document.createElement('div');
-  card.className = 'deal-card';
-
-  const link = document.createElement('a');
-  link.href = deal.url;
-  link.target = '_blank';
-  link.rel = 'noopener noreferrer';
-
-  const img = document.createElement('img');
-  img.className = 'deal-image';
-  img.alt = `Closed Deal #${deal.number}`;
-  // Try to load image from HAR URL (this might not always load)
-  img.src = deal.url;
-
-  const caption = document.createElement('div');
-  caption.className = 'deal-caption';
-  caption.textContent = `Closed Deal #${deal.number}`;
-
-  link.appendChild(img);
-  card.appendChild(link);
-  card.appendChild(caption);
-  carousel.appendChild(card);
-});
-
-// Navigation buttons
-const btnLeft = document.getElementById('nav-left');
-const btnRight = document.getElementById('nav-right');
-
-btnLeft.addEventListener('click', () => {
-  carousel.scrollBy({ left: -300, behavior: 'smooth' });
-});
-btnRight.addEventListener('click', () => {
-  carousel.scrollBy({ left: 300, behavior: 'smooth' });
-});
-
-// STAR FIELD BACKGROUND
+// Starfield animation (same as your existing effect but simplified & optimized)
 const canvas = document.getElementById('starfield');
 const ctx = canvas.getContext('2d');
+
+let starsArray = [];
 let width, height;
-let stars = [];
-let shootingStars = [];
+const numStars = 100;
 
-function Star() {
-  this.x = Math.random() * width;
-  this.y = Math.random() * height;
-  this.size = Math.random() * 1.5;
-  this.speed = 0.05 + Math.random() * 0.1;
-  this.alpha = 0.2 + Math.random() * 0.8;
-  this.twinkle = Math.random() * 0.05;
-}
-Star.prototype.update = function() {
-  this.alpha += this.twinkle;
-  if (this.alpha <= 0.2 || this.alpha >= 1) this.twinkle = -this.twinkle;
-}
-Star.prototype.draw = function() {
-  ctx.fillStyle = `rgba(255,255,255,${this.alpha})`;
-  ctx.beginPath();
-  ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-  ctx.fill();
-}
-
-function ShootingStar() {
-  this.reset();
-}
-
-ShootingStar.prototype.reset = function() {
-  this.x = Math.random() * width;
-  this.y = 0;
-  this.maxLen = 150;
-  this.len = 0;
-  this.speed = 8 + Math.random() * 6;
-  this.size = 2;
-  this.waitTime = 100 + Math.random() * 1000;
-  this.active = false;
-  this.timer = 0;
-  this.growing = true;  // growing or shrinking length
-}
-
-ShootingStar.prototype.update = function() {
-  if (this.active) {
-    this.x -= this.speed;
-    this.y += this.speed;
-
-    // Change length of tail smoothly (grow then shrink)
-    if (this.growing) {
-      this.len += 15;
-      if (this.len >= this.maxLen) this.growing = false;
-    } else {
-      this.len -= 15;
-      if (this.len <= 0) this.reset();
-    }
-
-    // If out of bounds, reset
-    if (this.x < 0 || this.y > height) {
-      this.reset();
-    }
-  } else {
-    this.timer++;
-    if (this.timer >= this.waitTime) {
-      this.active = true;
-      this.timer = 0;
-      this.len = 0;
-      this.growing = true;
-    }
+function init() {
+  resize();
+  starsArray = [];
+  for(let i = 0; i < numStars; i++) {
+    starsArray.push({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      radius: Math.random() * 1.3 + 0.3,
+      speed: Math.random() * 0.3 + 0.05,
+      opacity: Math.random() * 0.7 + 0.3,
+    });
   }
 }
 
-ShootingStar.prototype.draw = function() {
-  if (!this.active) return;
-
-  const grad = ctx.createLinearGradient(this.x, this.y, this.x - this.len, this.y - this.len);
-  grad.addColorStop(0, 'white');
-  grad.addColorStop(1, 'rgba(255,255,255,0)');
-
-  ctx.strokeStyle = grad;
-  ctx.lineWidth = this.size;
-  ctx.beginPath();
-  ctx.moveTo(this.x, this.y);
-  ctx.lineTo(this.x - this.len, this.y - this.len);
-  ctx.stroke();
-}
-
-function setup() {
+function resize() {
   width = window.innerWidth;
   height = window.innerHeight;
-  canvas.width = width;
-  canvas.height = height;
-
-  stars = [];
-  for (let i = 0; i < 120; i++) {
-    stars.push(new Star());
-  }
-  shootingStars = [];
-  for (let i = 0; i < 6; i++) {
-    shootingStars.push(new ShootingStar());
-  }
+  canvas.width = width * devicePixelRatio;
+  canvas.height = height * devicePixelRatio;
+  canvas.style.width = width + 'px';
+  canvas.style.height = height + 'px';
+  ctx.setTransform(1, 0, 0, 1, 0, 0);
+  ctx.scale(devicePixelRatio, devicePixelRatio);
 }
 
-function animate() {
+function draw() {
   ctx.clearRect(0, 0, width, height);
-  stars.forEach(star => {
-    star.update();
-    star.draw();
+  ctx.fillStyle = 'white';
+  starsArray.forEach(star => {
+    star.x -= star.speed;
+    if(star.x < 0) star.x = width;
+    ctx.globalAlpha = star.opacity;
+    ctx.beginPath();
+    ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+    ctx.fill();
   });
-  shootingStars.forEach(shootingStar => {
-    shootingStar.update();
-    shootingStar.draw();
-  });
-  requestAnimationFrame(animate);
+  ctx.globalAlpha = 1;
+  requestAnimationFrame(draw);
 }
 
+// Initialize
+init();
+draw();
 window.addEventListener('resize', () => {
-  setup();
+  resize();
+  init();
 });
-
-setup();
-animate();
