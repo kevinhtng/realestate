@@ -13,29 +13,24 @@ document.querySelectorAll('.nav-link').forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
 
-    const targetId = link.getAttribute('href').substring(1);
-    const target = document.getElementById(targetId);
-    const navbar = document.querySelector('.navbar');
-    const navToggle = document.querySelector('.nav-toggle');
     const navMenu = document.querySelector('.nav-menu');
+    const navToggle = document.querySelector('.nav-toggle');
+    const targetId = link.getAttribute('href').substring(1);
+    const targetSection = document.getElementById(targetId);
 
-    if (target && navbar) {
-      const navHeight = navbar.offsetHeight;
-      const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
-      window.scrollTo({
-        top: targetPosition - navHeight,
-        behavior: 'smooth'
-      });
-    }
+    // Close menu
+    navMenu.classList.remove('open');
+    navToggle.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
 
-    // Close mobile menu if open
-    if (navToggle && navMenu) {
-      navToggle.setAttribute('aria-expanded', 'false');
-      navToggle.classList.remove('open');
-      navMenu.classList.remove('open');
-    }
+    // Wait for menu close animation to finish (~300ms)
+    setTimeout(() => {
+      // Smooth scroll to target
+      targetSection.scrollIntoView({ behavior: 'smooth' });
+    }, 350);
   });
 });
+
 
 // Accordion toggles
 document.querySelectorAll('.accordion-toggle').forEach(button => {
