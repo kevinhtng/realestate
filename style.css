@@ -493,7 +493,7 @@ footer a:focus {
     scroll-padding-left: 1rem;
   }
 }
-/* Fix anchor scroll positioning */
-section {
-  scroll-margin-top: 70px; /* Adjust this if your navbar height changes */
-}
+
+/* section {
+  scroll-margin-top: 70px; 
+} */
