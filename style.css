@@ -558,3 +558,18 @@ section {
     scroll-padding-left: 1rem;
   }
 }
+/* Hide nav toggle on desktop */
+@media (min-width: 769px) {
+  .nav-toggle {
+    display: none !important;
+  }
+}
+
+/* Review card width tweak on mobile */
+@media (max-width: 768px) {
+  .review-card {
+    width: auto;       /* let width adapt */
+    max-width: 280px;  /* don't get wider than desktop size */
+    min-width: 90vw;   /* take at least 90% of viewport width */
+  }
+}
