@@ -565,16 +565,32 @@ section {
   }
 }
 /* Force hide nav toggle on desktop */
+/* Hide mobile toggle on desktop */
 @media (min-width: 769px) {
   .nav-toggle {
     display: none !important;
   }
 }
+
+/* Ensure nav-menu displays correctly on desktop */
 @media (min-width: 769px) {
   .nav-menu {
-    display: none !important;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem; /* spacing between links */
+    overflow: visible !important;
+  }
+
+  .navbar {
+    overflow: visible !important;
+  }
+
+  .nav-container {
+    overflow: visible !important;
   }
 }
+
 @media (max-width: 768px) {
   .review-card {
     width: 85vw;
