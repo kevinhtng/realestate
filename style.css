@@ -570,6 +570,11 @@ section {
     display: none !important;
   }
 }
+@media (min-width: 769px) {
+  .nav-menu {
+    display: none !important;
+  }
+}
 @media (max-width: 768px) {
   .review-card {
     width: 85vw;
