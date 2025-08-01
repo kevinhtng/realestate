@@ -418,7 +418,7 @@ canvas#starfield {
 }
 /* Shift all the review cards slightly left */
 #reviews-carousel {
-  margin-left: -1rem;  /* Adjust value as needed */
+  margin-left: -1.2rem;  /* Adjust value as needed */
 }
 #reviews-carousel::-webkit-scrollbar {
   display: none;
