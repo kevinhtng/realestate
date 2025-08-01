@@ -416,9 +416,9 @@ canvas#starfield {
   width: 100%;
   max-width: 100%;
 }
-/* Shift the first review card slightly left */
-#reviews-carousel .review-card:first-child {
-  margin-left: -1.5rem;
+/* Shift all the review cards slightly left */
+#reviews-carousel {
+  margin-left: -1rem;  /* Adjust value as needed */
 }
 #reviews-carousel::-webkit-scrollbar {
   display: none;
