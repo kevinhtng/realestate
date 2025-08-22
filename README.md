@@ -1,59 +1,62 @@
-# realestate
+#realestate
 
-This is a personal website for Kevin H Nguyen, a licensed real estate professional in Texas. The website showcases services, closed deals, client reviews, and provides a contact form for potential clients.
+**Personal Website for Kevin H Nguyen – Licensed Realtor, Texas**
 
----
-
-## Live Demo
-
-You can view the website live [here](https://kevinhtng.github.io/realestate/)
+This project is a responsive, interactive personal website built to showcase services, closed deals, and client testimonials. Beyond being client-facing, it demonstrates my skills in front-end development, UI/UX design, and JavaScript-driven interactivity.
 
 ---
 
-## Features
+## Key Highlights
 
-- **Responsive Navigation**  
-  A sticky, mobile-friendly navbar with a hamburger toggle menu for smaller screens.
-
-- **Hero Section**  
-  Highlights Kevin Nguyen as a trusted real estate partner, with a call-to-action for free home valuations.
-
-- **About Me Section**  
-  Detailed personal background, local area expertise, and professional experience. Includes a "Read More" expandable section.
-
-- **Services Section (Accordion)**  
-  - Commercial Properties  
-  - Buying Assistance  
-  - Selling Your Property  
-  - Leasing Services  
-  Each service has detailed explanations and contact prompts.
-
-- **Closed Deals Carousel**  
-  Dynamic carousel showcasing past successful deals with HAR links for each property.
-
-- **Client Reviews Carousel**  
-  Scrollable reviews highlighting customer satisfaction and experiences.
-
-- **Contact Form**  
-  Integrated with [Formspree](https://formspree.io/) for easy email submissions.
-
-- **Starfield Background Animation**  
-  Engaging animated canvas background implemented with JavaScript.
-
-- **Accessible and Modern UI**  
-  Responsive design, smooth scrolling with offset for sticky navigation, keyboard-accessible elements, and focus states.
+- **Responsive Design:** Works seamlessly across desktop, tablet, and mobile devices using HTML5 and CSS3.  
+- **Interactive Components:** 
+  - Accordion for services  
+  - Carousels for closed deals and client reviews  
+  - Animated starfield background using Canvas API  
+  - Smooth scrolling and mobile-friendly navigation  
+- **Dynamic Data Handling:** Deal and review carousels populate from JavaScript arrays for maintainable, scalable content.  
+- **Contact Form Integration:** Functional form using Formspree for secure submissions.  
+- **Readability & Maintainability:** Clean, modular code using vanilla JavaScript, semantic HTML, and organized CSS.
 
 ---
 
-## Built With
+## Tech Stack
 
-- **HTML5 & CSS3** – Structure and styling of the website  
-- **JavaScript (ES6)** – Interactivity including carousels, accordions, and Read More toggle  
-- **Canvas API** – Animated starfield background  
-- **Formspree** – Contact form submission without a backend  
-- **Responsive Design** – Fully mobile-friendly and adaptive layout
+- **HTML5 & CSS3** – Layout, responsive design, styling  
+- **Vanilla JavaScript** – Interactive features (accordion, carousels, navigation toggle, read more)  
+- **Canvas API** – Animated starfield for visual enhancement  
+- **Formspree** – Secure contact form integration  
 
 ---
 
-## Project Structure
+## Purpose & Learning
 
+I built this project to:  
+- Demonstrate front-end web development skills with real-world applicability  
+- Leverage AI assistance to improve code quality and accelerate development  
+- Create a polished, interactive portfolio piece that highlights both technical skills and attention to detail  
+
+---
+
+## File Structure
+/root
+├─ index.html # Website markup
+├─ style.css # Styling
+├─ scripts.js # Interactive functionality
+├─ stars.js # Canvas background animation
+└─ README.md # Project documentation
+
+---
+
+## Skills Showcased
+
+- Front-end web development  
+- Responsive UI/UX design  
+- JavaScript DOM manipulation & data-driven UI  
+- Integration with third-party services (Formspree)  
+- Problem-solving and project planning  
+- Efficient use of AI for development workflow
+
+---
+
+This project is a **demonstration of both technical capability and practical application**, making it suitable for portfolio or resume references for web development, software engineering, or full-stack roles.
