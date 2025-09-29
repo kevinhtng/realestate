@@ -51,6 +51,8 @@ document.querySelectorAll('.accordion-toggle').forEach(button => {
 
 // Deal data: number, HAR link, image try loaded from HAR URL (same as link)
 const deals = [
+  { number: 49, url: "https://www.har.com/homedetail/21331-summer-wine-dr-richmond-tx-77406/9703325?sid=10070955&cid=Kevinhnguyen" },
+  { number: 48, url: "https://www.har.com/homedetail/4723-cashel-castle-dr-houston-tx-77069/3376023?sid=9929268&cid=Kevinhnguyen" },
   { number: 47, url: "https://www.har.com/homedetail/18251-river-sage-dr-houston-tx-77084/3713180?sid=9933408&cid=Kevinhnguyen" },
   { number: 46, url: "https://www.har.com/homedetail/9607-wakefield-village-dr-houston-tx-77095/3709626?sid=9979407&cid=Kevinhnguyen" },
   { number: 45, url: "https://www.har.com/homedetail/0-jennings-creek-ct-fulshear-tx-77441/14453195?sid=9979408&cid=Kevinhnguyen" },
