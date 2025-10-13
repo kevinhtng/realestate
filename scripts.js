@@ -51,7 +51,8 @@ document.querySelectorAll('.accordion-toggle').forEach(button => {
 
 // Deal data: number, HAR link, image try loaded from HAR URL (same as link)
 const deals = [
-  { number: 49, url: "https://www.har.com/homedetail/21331-summer-wine-dr-richmond-tx-77406/9703325?sid=10070955&cid=Kevinhnguyen" },
+  { number: 50, url: "https://www.har.com/homedetail/21331-summer-wine-dr-richmond-tx-77406/9703325?sid=10070955&cid=Kevinhnguyen" },
+  { number: 49, url: "https://www.har.com/homedetail/2202-villa-flora-ln-friendswood-tx-77546/17219252?sid=9864654&cid=Kevinhnguyen" },
   { number: 48, url: "https://www.har.com/homedetail/4723-cashel-castle-dr-houston-tx-77069/3376023?sid=9929268&cid=Kevinhnguyen" },
   { number: 47, url: "https://www.har.com/homedetail/18251-river-sage-dr-houston-tx-77084/3713180?sid=9933408&cid=Kevinhnguyen" },
   { number: 46, url: "https://www.har.com/homedetail/9607-wakefield-village-dr-houston-tx-77095/3709626?sid=9979407&cid=Kevinhnguyen" },
@@ -144,6 +145,14 @@ btnRight.addEventListener('click', () => {
 
 // Reviews data (add as many as you want)
 const reviews = [
+  {
+    quote: "Kevin is very knowledgeable and experience realtor. He helped me get a really good deal for my house! He is very experience and professional. He always protect you and get you everything you want. Highly recommended!",
+    reviewer: "Cuc N."
+  },
+  {
+    quote: "Kevin is an Amazing realtor. He listens, professional and make sure you get everything you want. He will work with you, and ensure you are protect from all your rights. I highly recommended him. He will listen, and take his time to find you your dream house. He responded quickly and always there for you when you have any questions.",
+    reviewer: "Duc N."
+  },
   {
     quote: "You've been so helpful and attentive throughout this whole process, and you're a funny guy, Kevin!",
     reviewer: "Matthew M."
