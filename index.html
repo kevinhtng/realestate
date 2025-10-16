@@ -1,174 +1,194 @@
+/* ==================== index.html ==================== */
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kevin H Nguyen - Realtor</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <canvas id="starfield"></canvas>
+  <canvas id="forest-canvas"></canvas>
 
   <!-- Navigation -->
   <nav class="navbar">
     <div class="nav-container">
-      <a href="#hero" class="nav-brand">Kevin Nguyen. Realtor.</a>
-      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
-        <span class="hamburger"></span>
+      <a href="#hero" class="brand">
+        <span class="moose-icon">🦌</span>
+        <span class="brand-text">Kevin Nguyen</span>
+      </a>
+      <button class="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
       <ul class="nav-menu">
-        <li><a href="#hero" class="nav-link">Home</a></li>
-        <li><a href="#about" class="nav-link">About Me</a></li>
-        <li><a href="#services" class="nav-link">Services</a></li>
-        <li><a href="#deals" class="nav-link">Closed Deals</a></li>
-        <li><a href="#reviews" class="nav-link">Reviews</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#deals">Deals</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
   </nav>
 
   <!-- Hero -->
   <section id="hero" class="hero">
-    <h1>Kevin Nguyen. Realtor.</h1>
-    <p>Your trusted partner for closing successful commercial and residential real estate deals across the Greater Houston area.</p>
-    <a href="#contact" class="btn-primary">Get Your Free Home Valuation</a>
+    <div class="hero-content">
+      <h1>Find Your Home in the Wild</h1>
+      <p>Navigating Texas Real Estate with Strength & Integrity</p>
+      <a href="#contact" class="cta-button">Get Your Free Home Valuation</a>
+    </div>
   </section>
 
   <!-- About Me -->
-  <section id="about" class="section-container">
-    <h2>About Me</h2>
-    <p id="about-preview">
-      Hi, I’m Kevin Hoang Nguyen — a dedicated real estate professional with a deep understanding of the Houston metropolitan area.
-      <span id="dots">...</span>
-    </p>
-    <div id="about-full">
-      <p>
-        Having lived in Alief, Sugar Land, Cypress, Richmond, and Fulshear, I bring firsthand knowledge of these dynamic communities. I’ve also spent significant time in Bellaire and Katy, and frequently visited Missouri City and Rosenberg, giving me valuable insights into the unique characteristics and opportunities each of these areas offers.
-      </p>
-      <p>
-        I’ve had the privilege of helping over 30 clients from diverse backgrounds find their perfect homes. Each experience has only strengthened my passion for making the home-buying and leasing process smooth and enjoyable. With a bachelor’s degree in cybersecurity, I know how to leverage technology to better serve my clients — whether that’s using advanced tools for property searches or ensuring secure communication and data handling.
-      </p>
-      <p>
-        I started my real estate career at just 21 years old, bringing youthful energy, a fresh perspective, and plenty of time to dedicate to my clients' success. My strong base of repeat clients reflects my commitment to excellent service, market expertise, and a personalized approach — along with a growing understanding of real estate investment opportunities.
-      </p>
-      <p>
-        When challenges arise, I lean on my trusted network of experienced professionals to make sure my clients always receive the best guidance possible.
-      </p>
-      <p>
-        Whether you're buying, selling, or leasing, you can count on me to work tirelessly on your behalf.
-      </p>
-      <p>
-        Let’s make your real estate journey seamless and rewarding!
-      </p>
-    </div>
-
-    <button id="readMoreBtn" aria-expanded="false">Read More</button>
-  </section>
-
-  <!-- Services (Accordion) -->
-  <section id="services" class="section-container">
-    <h2>Services</h2>
-
-    <div class="accordion">
-  <button class="accordion-toggle" aria-expanded="false">Commercial Properties▾</button>
-  <div class="accordion-content" hidden>
-    <p>
-      Whether you're starting a business or searching for an apartment, both fall under commercial services—and I’m here to help.<br><br>
-      For business owners, I’ve assisted clients in securing office space tailored to their needs, like leasing an office for an insurance agency. I’ll provide a curated list of properties based on your criteria, schedule viewings, and help negotiate key terms such as monthly rate, tenant improvement (TI) allowances, and more.<br><br>
-      For apartment seekers, I offer referral services. I can send you a list of recommended apartments, or if you already have one in mind, simply list my name as your referral. If the property offers referral compensation, you’ll receive a portion of that commission. (Just check with me first to confirm eligibility.)<br><br>
-      <strong>Looking for your next business space or apartment? Contact me today to get started!</strong>
-    </p>
-  </div>
-      
-  <button class="accordion-toggle" aria-expanded="false">Buying Assistance▾</button>
-  <div class="accordion-content" hidden>
-    <p>
-      Thinking about purchasing a new build? If you list me as your agent during registration, I guarantee a rebate back to you at closing. You can negotiate and sign everything directly with the builder — I don’t even have to be present unless you'd like me there to assist.<br><br>
-      With experience helping everyone from investors to first-time home buyers secure their homes, I offer more than just guidance — I provide tailored support at every step. From recommending competitive offer prices to connecting you with professionals such as trusted inspectors, I’m here to simplify your journey. I also help you navigate negotiations to get the best possible deal and can connect you with reputable local mortgage professionals to ease your financing process.<br><br>
-      Interested in saving even more? Ask me how you can get a rebate at closing!<br><br>
-      <strong>Ready to find your perfect home? Contact me today to get started!</strong>
-    </p>
-  </div>
-
-    <button class="accordion-toggle" aria-expanded="false">Selling Your Property▾</button>
-    <div class="accordion-content" hidden>
-      <p>
-        I provide a thorough comparative market analysis (CMA) to recommend the optimal pricing strategy, along with insights on days on market (DOM) for similar properties in your area. You’ll receive <strong>all</strong> offers presented clearly, so you stay in control of who you sell to. I also hire professional photographers for every listing—because great photos make a huge difference, and I don’t cut corners like some realtors do.<br><br>
-        <strong>Plus, if you’d like a rebate back at closing, just ask!</strong><br><br>
-        <strong>Ready to get started? Contact me today to discuss your selling options!</strong>
-      </p>
-    </div>
-
-    <button class="accordion-toggle" aria-expanded="false">Leasing Services▾</button>
-    <div class="accordion-content" hidden>
-      <p>
-        With over 35 lease deals successfully closed representing both landlords and tenants, I have the process down to a science to help both parties achieve their goals.<br><br>
-        For landlords, I provide a comprehensive comparative market analysis (CMA) to recommend competitive pricing and ensure your property leases quickly. You’ll receive all offers clearly presented, along with my insights on each prospective applicant. I conduct thorough background and credit checks and verify all information to protect your interests. Timeliness is a priority — I work to get your property filled as fast as possible.<br><br>
-        For tenants, I’ll ensure you meet rental requirements and, if not, offer suggestions to improve your chances. I’ll show you listings until you find the perfect home.<br><br>
-        I also welcome referrals—whether it’s a landlord needing help leasing their property or a tenant searching for the right home.<br><br>
-        <strong>Ready to lease your property or find your next home? Contact me today to get started!</strong>
-      </p>
-    </div>
-
+  <section id="about" class="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <div class="about-content">
+        <p>Hi, I'm Kevin Hoang Nguyen — a dedicated real estate professional with a deep understanding of the Houston metropolitan area.</p>
+        
+        <div class="about-expanded">
+          <p>Having lived in Alief, Sugar Land, Cypress, Richmond, and Fulshear, I bring firsthand knowledge of these dynamic communities. I've also spent significant time in Bellaire and Katy, and frequently visited Missouri City and Rosenberg, giving me valuable insights into the unique characteristics and opportunities each of these areas offers.</p>
+          
+          <p>I've had the privilege of helping over 30 clients from diverse backgrounds find their perfect homes. Each experience has only strengthened my passion for making the home-buying and leasing process smooth and enjoyable. With a bachelor's degree in cybersecurity, I know how to leverage technology to better serve my clients — whether that's using advanced tools for property searches or ensuring secure communication and data handling.</p>
+          
+          <p>I started my real estate career at just 21 years old, bringing youthful energy, a fresh perspective, and plenty of time to dedicate to my clients' success. My strong base of repeat clients reflects my commitment to excellent service, market expertise, and a personalized approach — along with a growing understanding of real estate investment opportunities.</p>
+          
+          <p>When challenges arise, I lean on my trusted network of experienced professionals to make sure my clients always receive the best guidance possible.</p>
+          
+          <p>Whether you're buying, selling, or leasing, you can count on me to work tirelessly on your behalf.</p>
+          
+          <p><strong>Let's make your real estate journey seamless and rewarding!</strong></p>
+        </div>
+        
+        <button class="read-more">Read More</button>
+      </div>
     </div>
   </section>
 
-  <!-- Closed Deals Carousel -->
-  <section id="deals" class="section-container">
-    <h2>Closed Deals</h2>
-    <div id="carousel-container">
-      <button id="nav-left" class="nav-button" aria-label="Scroll Left">‹</button>
-      <div id="carousel" tabindex="0" aria-label="Closed deals carousel"></div>
-      <button id="nav-right" class="nav-button" aria-label="Scroll Right">›</button>
+  <!-- Services -->
+  <section id="services" class="services">
+    <div class="container">
+      <h2>Services</h2>
+      <div class="services-grid">
+        
+        <div class="service-card">
+          <div class="service-icon">🏢</div>
+          <h3>Commercial Properties</h3>
+          <div class="service-content">
+            <p>Whether you're starting a business or searching for an apartment, both fall under commercial services—and I'm here to help.</p>
+            <p>For business owners, I've assisted clients in securing office space tailored to their needs, like leasing an office for an insurance agency. I'll provide a curated list of properties based on your criteria, schedule viewings, and help negotiate key terms such as monthly rate, tenant improvement (TI) allowances, and more.</p>
+            <p>For apartment seekers, I offer referral services. I can send you a list of recommended apartments, or if you already have one in mind, simply list my name as your referral. If the property offers referral compensation, you'll receive a portion of that commission. (Just check with me first to confirm eligibility.)</p>
+            <p><strong>Looking for your next business space or apartment? Contact me today to get started!</strong></p>
+          </div>
+          <button class="service-toggle">Learn More</button>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🏡</div>
+          <h3>Buying Assistance</h3>
+          <div class="service-content">
+            <p>Thinking about purchasing a new build? If you list me as your agent during registration, I guarantee a rebate back to you at closing. You can negotiate and sign everything directly with the builder — I don't even have to be present unless you'd like me there to assist.</p>
+            <p>With experience helping everyone from investors to first-time home buyers secure their homes, I offer more than just guidance — I provide tailored support at every step. From recommending competitive offer prices to connecting you with professionals such as trusted inspectors, I'm here to simplify your journey. I also help you navigate negotiations to get the best possible deal and can connect you with reputable local mortgage professionals to ease your financing process.</p>
+            <p>Interested in saving even more? Ask me how you can get a rebate at closing!</p>
+            <p><strong>Ready to find your perfect home? Contact me today to get started!</strong></p>
+          </div>
+          <button class="service-toggle">Learn More</button>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">💰</div>
+          <h3>Selling Your Property</h3>
+          <div class="service-content">
+            <p>I provide a thorough comparative market analysis (CMA) to recommend the optimal pricing strategy, along with insights on days on market (DOM) for similar properties in your area. You'll receive <strong>all</strong> offers presented clearly, so you stay in control of who you sell to. I also hire professional photographers for every listing—because great photos make a huge difference, and I don't cut corners like some realtors do.</p>
+            <p><strong>Plus, if you'd like a rebate back at closing, just ask!</strong></p>
+            <p><strong>Ready to get started? Contact me today to discuss your selling options!</strong></p>
+          </div>
+          <button class="service-toggle">Learn More</button>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🔑</div>
+          <h3>Leasing Services</h3>
+          <div class="service-content">
+            <p>With over 35 lease deals successfully closed representing both landlords and tenants, I have the process down to a science to help both parties achieve their goals.</p>
+            <p>For landlords, I provide a comprehensive comparative market analysis (CMA) to recommend competitive pricing and ensure your property leases quickly. You'll receive all offers clearly presented, along with my insights on each prospective applicant. I conduct thorough background and credit checks and verify all information to protect your interests. Timeliness is a priority — I work to get your property filled as fast as possible.</p>
+            <p>For tenants, I'll ensure you meet rental requirements and, if not, offer suggestions to improve your chances. I'll show you listings until you find the perfect home.</p>
+            <p>I also welcome referrals—whether it's a landlord needing help leasing their property or a tenant searching for the right home.</p>
+            <p><strong>Ready to lease your property or find your next home? Contact me today to get started!</strong></p>
+          </div>
+          <button class="service-toggle">Learn More</button>
+        </div>
+
+      </div>
     </div>
   </section>
 
-  <!-- Reviews Carousel -->
-  <section id="reviews" class="section-container">
-    <h2>Client Reviews</h2>
-    <div id="reviews-carousel-container">
-      <button id="reviews-nav-left" class="nav-button" aria-label="Previous review">‹</button>
-      <div id="reviews-carousel" tabindex="0" aria-label="Client reviews carousel"></div>
-      <button id="reviews-nav-right" class="nav-button" aria-label="Next review">›</button>
+  <!-- Closed Deals -->
+  <section id="deals" class="deals">
+    <div class="container">
+      <h2>Closed Deals</h2>
+      <div class="carousel-wrapper">
+        <button class="carousel-btn prev" aria-label="Previous">‹</button>
+        <div class="carousel" id="deals-carousel"></div>
+        <button class="carousel-btn next" aria-label="Next">›</button>
+      </div>
     </div>
   </section>
 
-  <!-- Contact Form -->
-  <section id="contact" class="section-container">
-    <h2>Contact Me</h2>
-    <form
-      action="https://formspree.io/f/mzzvvejb"
-      method="POST"
-      class="contact-form"
-    >
-      <label for="name">Your Name:</label>
-      <input type="text" id="name" name="name" required />
+  <!-- Reviews -->
+  <section id="reviews" class="reviews">
+    <div class="container">
+      <h2>Client Reviews</h2>
+      <div class="carousel-wrapper">
+        <button class="carousel-btn prev" aria-label="Previous">‹</button>
+        <div class="carousel reviews-carousel" id="reviews-carousel"></div>
+        <button class="carousel-btn next" aria-label="Next">›</button>
+      </div>
+    </div>
+  </section>
 
-      <label for="email">Your Email:</label>
-      <input type="email" id="email" name="email" required />
-
-      <label for="phone">Your Phone (optional):</label>
-      <input type="tel" id="phone" name="phone" />
-
-      <button type="submit" class="btn-primary">Send</button>
-    </form>
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <form action="https://formspree.io/f/mzzvvejb" method="POST" class="contact-form">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Your Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Your Phone (optional)</label>
+          <input type="tel" id="phone" name="phone">
+        </div>
+        <button type="submit" class="cta-button">Send Message</button>
+      </form>
+    </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p><a href="https://www.har.com/mhf/terms/dispBrokerInfo?sitetype=aws&cid=772135&token=10467b6cd0e1cbfbe9d69a50621ed844" target="_blank" rel="noopener noreferrer">IABS - Information About Brokerage Services</a></p>
-    <p>Email: kevinngrealtor@gmail.com | Phone: (832) 525-3584</p>
-    <p>Licensed in Texas</p>
-    <p class="social-links">
-      <a href="https://facebook.com/kevinngrealtor" target="_blank" rel="noopener noreferrer" aria-label="Facebook">📘</a>
-      <a href="https://instagram.com/mooserealty" target="_blank" rel="noopener noreferrer" aria-label="Instagram">📸</a>
-      <a href="https://www.google.com/search?sca_esv=aedf5bb4ef8e9c7e&hl=en-US&authuser=1&sxsrf=AHTn8zpP8DdJdQ0aKHkVOsKhOKavDkGCyA:1746905804813&kgmid=/g/11svdmz7jx&q=Kevin+Hoang+Nguyen+Realtor&shndl=30&shem=vidc" target="_blank" rel="noopener noreferrer" aria-label="Google Reviews">⭐️</a>
-    </p>
+    <div class="container">
+      <p><a href="https://www.har.com/mhf/terms/dispBrokerInfo?sitetype=aws&cid=772135&token=10467b6cd0e1cbfbe9d69a50621ed844" target="_blank" rel="noopener noreferrer">IABS - Information About Brokerage Services</a></p>
+      <p>Email: kevinngrealtor@gmail.com | Phone: (832) 525-3584</p>
+      <p>Licensed in Texas</p>
+      <div class="social-links">
+        <a href="https://facebook.com/kevinngrealtor" target="_blank" aria-label="Facebook">📘</a>
+        <a href="https://instagram.com/mooserealty" target="_blank" aria-label="Instagram">📸</a>
+        <a href="https://www.google.com/search?sca_esv=aedf5bb4ef8e9c7e&hl=en-US&authuser=1&sxsrf=AHTn8zpP8DdJdQ0aKHkVOsKhOKavDkGCyA:1746905804813&kgmid=/g/11svdmz7jx&q=Kevin+Hoang+Nguyen+Realtor&shndl=30&shem=vidc" target="_blank" aria-label="Google Reviews">⭐</a>
+      </div>
+    </div>
   </footer>
 
-  <script src="stars.js"></script>
-  <script src="scripts.js"></script>
-
+  <script src="forest.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
+
+/* ==================== END index.html ==================== */
