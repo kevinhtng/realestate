@@ -1,55 +1,39 @@
-// Navigation toggle
-const navToggle = document.querySelector('.nav-toggle');
+// Navigation hamburger
+const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
-navToggle.addEventListener('click', () => {
-  const expanded = navToggle.getAttribute('aria-expanded') === 'true' || false;
-  navToggle.setAttribute('aria-expanded', !expanded);
-  navToggle.classList.toggle('open');
-  navMenu.classList.toggle('open');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  navMenu.classList.toggle('active');
 });
 
-// Close hamburger menu when clicking nav links + smooth scroll with offset
-document.querySelectorAll('.nav-link').forEach(link => {
-  link.addEventListener('click', e => {
-    e.preventDefault();
-
-    const navMenu = document.querySelector('.nav-menu');
-    const navToggle = document.querySelector('.nav-toggle');
-    const targetId = link.getAttribute('href');
-    const targetSection = document.querySelector(targetId);
-
-    // Close mobile menu
-    navMenu.classList.remove('open');
-    navToggle.classList.remove('open');
-    navToggle.setAttribute('aria-expanded', 'false');
-
-    // Delay scroll to allow nav to finish closing
-    setTimeout(() => {
-      if (!targetSection) return;
-
-      const headerOffset = 80; // adjust this to your fixed header height in px
-      const elementPosition = targetSection.getBoundingClientRect().top;
-      const offsetPosition = window.pageYOffset + elementPosition - headerOffset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-    }, 300);
+// Close menu when clicking nav links
+document.querySelectorAll('.nav-menu a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    navMenu.classList.remove('active');
   });
 });
 
-// Accordion toggles
-document.querySelectorAll('.accordion-toggle').forEach(button => {
-  button.addEventListener('click', () => {
-    const expanded = button.getAttribute('aria-expanded') === 'true';
-    button.setAttribute('aria-expanded', !expanded);
-    const content = button.nextElementSibling;
-    if (content) content.hidden = expanded;
+// Read More button
+const readMoreBtn = document.querySelector('.read-more');
+const aboutExpanded = document.querySelector('.about-expanded');
+
+readMoreBtn.addEventListener('click', () => {
+  aboutExpanded.classList.toggle('open');
+  readMoreBtn.textContent = aboutExpanded.classList.contains('open') ? 'Read Less' : 'Read More';
+});
+
+// Service toggles
+document.querySelectorAll('.service-toggle').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const content = btn.previousElementSibling;
+    content.classList.toggle('open');
+    btn.textContent = content.classList.contains('open') ? 'Show Less' : 'Learn More';
   });
 });
 
-// Deal data: number, HAR link, image try loaded from HAR URL (same as link)
+// Closed Deals Data
 const deals = [
   { number: 50, url: "https://www.har.com/homedetail/21331-summer-wine-dr-richmond-tx-77406/9703325?sid=10070955&cid=Kevinhnguyen" },
   { number: 49, url: "https://www.har.com/homedetail/2202-villa-flora-ln-friendswood-tx-77546/17219252?sid=9864654&cid=Kevinhnguyen" },
@@ -103,47 +87,34 @@ const deals = [
   { number: 1, url: "https://www.har.com/homedetail/7307-ferrara-dr-houston-tx-77083/8930273?sid=6567600&cid=Kevinhnguyen" }
 ];
 
-// Select carousel container
-const carousel = document.getElementById('carousel');
-
-// Populate carousel with deal cards
+// Populate deals carousel
+const dealsCarousel = document.getElementById('deals-carousel');
 deals.forEach(deal => {
   const card = document.createElement('div');
   card.className = 'deal-card';
-
+  
   const link = document.createElement('a');
   link.href = deal.url;
   link.target = '_blank';
   link.rel = 'noopener noreferrer';
-
-  const img = document.createElement('img');
+  link.style.textDecoration = 'none';
+  link.style.color = 'inherit';
+  
+  const img = document.createElement('div');
   img.className = 'deal-image';
-  img.alt = `Closed Deal #${deal.number}`;
-  // Try to load image from HAR URL (this might not always load)
-  img.src = deal.url;
-
-  const caption = document.createElement('div');
-  caption.className = 'deal-caption';
-  caption.textContent = `Closed Deal #${deal.number}`;
-
+  img.textContent = '🏡';
+  
+  const info = document.createElement('div');
+  info.className = 'deal-info';
+  info.innerHTML = `<h4>Closed Deal #${deal.number}</h4>`;
+  
   link.appendChild(img);
+  link.appendChild(info);
   card.appendChild(link);
-  card.appendChild(caption);
-  carousel.appendChild(card);
+  dealsCarousel.appendChild(card);
 });
 
-// Navigation buttons
-const btnLeft = document.getElementById('nav-left');
-const btnRight = document.getElementById('nav-right');
-
-btnLeft.addEventListener('click', () => {
-  carousel.scrollBy({ left: -300, behavior: 'smooth' });
-});
-btnRight.addEventListener('click', () => {
-  carousel.scrollBy({ left: 300, behavior: 'smooth' });
-});
-
-// Reviews data (add as many as you want)
+// Reviews Data
 const reviews = [
   {
     quote: "Kevin is very knowledgeable and experience realtor. He helped me get a really good deal for my house! He is very experience and professional. He always protect you and get you everything you want. Highly recommended!",
@@ -162,11 +133,11 @@ const reviews = [
     reviewer: "Arthur L."
   },
   {
-    quote: "Kevin is a great asset to any real estate team. He’s helped us get our rental properties filled and has such a seamless and thoughtful process. Kevin is one of the best realtors we’ve dealt with.",
+    quote: "Kevin is a great asset to any real estate team. He's helped us get our rental properties filled and has such a seamless and thoughtful process. Kevin is one of the best realtors we've dealt with.",
     reviewer: "Nancy T."
   },
   {
-    quote: "Kevin was a huge help during my tough move and got the job done fast! If you’re looking for a realtor he’s the one! Accommodating, personable, and swift. Couldn’t ask for more.",
+    quote: "Kevin was a huge help during my tough move and got the job done fast! If you're looking for a realtor he's the one! Accommodating, personable, and swift. Couldn't ask for more.",
     reviewer: "Summer Z."
   },
   {
@@ -178,7 +149,7 @@ const reviews = [
     reviewer: "Ari X."
   },
   {
-    quote: "Kevin it’s such a great realtor to work with. His response is immediate. He helped me get my clients into the property he was leasing fast and efficiently even when he was out of town.",
+    quote: "Kevin it's such a great realtor to work with. His response is immediate. He helped me get my clients into the property he was leasing fast and efficiently even when he was out of town.",
     reviewer: "Beverlin V."
   },
   {
@@ -189,43 +160,111 @@ const reviews = [
 
 // Populate reviews carousel
 const reviewsCarousel = document.getElementById('reviews-carousel');
-reviews.forEach(r => {
+reviews.forEach(review => {
   const card = document.createElement('div');
-  card.classList.add('review-card');
-  card.tabIndex = 0;
+  card.className = 'review-card';
   card.innerHTML = `
-    <p class="quote">"${r.quote}"</p>
-    <p class="reviewer">— ${r.reviewer}</p>
+    <p class="quote">"${review.quote}"</p>
+    <p class="reviewer">— ${review.reviewer}</p>
   `;
   reviewsCarousel.appendChild(card);
 });
 
-// Reviews carousel nav buttons
-const reviewsBtnLeft = document.getElementById('reviews-nav-left');
-const reviewsBtnRight = document.getElementById('reviews-nav-right');
-
-reviewsBtnLeft.addEventListener('click', () => {
-  reviewsCarousel.scrollBy({left: -300, behavior: 'smooth'});
+// Carousel navigation
+document.querySelectorAll('.carousel-wrapper').forEach(wrapper => {
+  const carousel = wrapper.querySelector('.carousel');
+  const prevBtn = wrapper.querySelector('.prev');
+  const nextBtn = wrapper.querySelector('.next');
+  
+  prevBtn.addEventListener('click', () => {
+    carousel.scrollBy({ left: -400, behavior: 'smooth' });
+  });
+  
+  nextBtn.addEventListener('click', () => {
+    carousel.scrollBy({ left: 400, behavior: 'smooth' });
+  });
 });
 
-reviewsBtnRight.addEventListener('click', () => {
-  reviewsCarousel.scrollBy({left: 300, behavior: 'smooth'});
-});
-// Add a Read More Button for About Me Section
-const readMoreBtn = document.getElementById('readMoreBtn');
-const aboutFull = document.getElementById('about-full');
-const dots = document.getElementById('dots');
+/* ==================== END script.js ==================== */
 
-readMoreBtn.addEventListener('click', () => {
-  const isExpanded = aboutFull.classList.contains('expanded');
 
-  if (isExpanded) {
-    aboutFull.classList.remove('expanded');
-    readMoreBtn.textContent = 'Read More';
-    dots.style.display = 'inline';
-  } else {
-    aboutFull.classList.add('expanded');
-    readMoreBtn.textContent = 'Read Less';
-    dots.style.display = 'none';
+/* ==================== forest.js ==================== */
+const canvas = document.getElementById('forest-canvas');
+const ctx = canvas.getContext('2d');
+let trees = [];
+let width, height;
+const numTrees = 25;
+
+function init() {
+  resize();
+  trees = [];
+  for (let i = 0; i < numTrees; i++) {
+    trees.push({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      size: Math.random() * 60 + 30,
+      speed: Math.random() * 0.2 + 0.05,
+      opacity: Math.random() * 0.4 + 0.1
+    });
   }
+}
+
+function resize() {
+  width = window.innerWidth;
+  height = window.innerHeight;
+  canvas.width = width * devicePixelRatio;
+  canvas.height = height * devicePixelRatio;
+  canvas.style.width = width + 'px';
+  canvas.style.height = height + 'px';
+  ctx.scale(devicePixelRatio, devicePixelRatio);
+}
+
+function drawTree(tree) {
+  ctx.globalAlpha = tree.opacity;
+  ctx.fillStyle = '#2d5a4a';
+  
+  // Draw pine tree shape
+  ctx.beginPath();
+  ctx.moveTo(tree.x, tree.y);
+  ctx.lineTo(tree.x - tree.size / 3, tree.y + tree.size);
+  ctx.lineTo(tree.x + tree.size / 3, tree.y + tree.size);
+  ctx.closePath();
+  ctx.fill();
+  
+  // Middle section
+  ctx.beginPath();
+  ctx.moveTo(tree.x, tree.y + tree.size * 0.3);
+  ctx.lineTo(tree.x - tree.size / 4, tree.y + tree.size * 0.7);
+  ctx.lineTo(tree.x + tree.size / 4, tree.y + tree.size * 0.7);
+  ctx.closePath();
+  ctx.fill();
+  
+  // Trunk
+  ctx.fillStyle = '#4a3728';
+  ctx.fillRect(tree.x - tree.size / 15, tree.y + tree.size, tree.size / 7.5, tree.size / 5);
+}
+
+function animate() {
+  ctx.clearRect(0, 0, width, height);
+  
+  trees.forEach(tree => {
+    drawTree(tree);
+    tree.y += tree.speed;
+    
+    if (tree.y > height + tree.size) {
+      tree.y = -tree.size;
+      tree.x = Math.random() * width;
+    }
+  });
+  
+  ctx.globalAlpha = 1;
+  requestAnimationFrame(animate);
+}
+
+init();
+animate();
+
+window.addEventListener('resize', () => {
+  resize();
+  init();
 });
