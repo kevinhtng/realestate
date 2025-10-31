@@ -1,4 +1,4 @@
-// Navigation hamburger
+// Hamburger menu
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 
@@ -7,7 +7,6 @@ hamburger.addEventListener('click', () => {
   navMenu.classList.toggle('active');
 });
 
-// Close menu when clicking nav links
 document.querySelectorAll('.nav-menu a').forEach(link => {
   link.addEventListener('click', () => {
     hamburger.classList.remove('active');
@@ -33,7 +32,7 @@ document.querySelectorAll('.service-toggle').forEach(btn => {
   });
 });
 
-// Closed Deals Data
+// Deals data
 const deals = [
   { number: 50, url: "https://www.har.com/homedetail/21331-summer-wine-dr-richmond-tx-77406/9703325?sid=10070955&cid=Kevinhnguyen" },
   { number: 49, url: "https://www.har.com/homedetail/2202-villa-flora-ln-friendswood-tx-77546/17219252?sid=9864654&cid=Kevinhnguyen" },
@@ -87,7 +86,7 @@ const deals = [
   { number: 1, url: "https://www.har.com/homedetail/7307-ferrara-dr-houston-tx-77083/8930273?sid=6567600&cid=Kevinhnguyen" }
 ];
 
-// Populate deals carousel
+// Populate deals carousel WITH IMAGES
 const dealsCarousel = document.getElementById('deals-carousel');
 deals.forEach(deal => {
   const card = document.createElement('div');
@@ -100,22 +99,47 @@ deals.forEach(deal => {
   link.style.textDecoration = 'none';
   link.style.color = 'inherit';
   
-  const img = document.createElement('div');
-  img.className = 'deal-image';
-  img.textContent = '🏡';
+  const imgContainer = document.createElement('div');
+  imgContainer.className = 'deal-image';
+  
+  const img = document.createElement('img');
+  img.src = `images/deal-${deal.number}.jpg`;
+  img.alt = `Closed Deal #${deal.number}`;
+  img.style.width = '100%';
+  img.style.height = '100%';
+  img.style.objectFit = 'cover';
+  
+  // Fallback to emoji if image fails to load
+  img.onerror = function() {
+    imgContainer.innerHTML = '🏡';
+    imgContainer.style.display = 'flex';
+    imgContainer.style.alignItems = 'center';
+    imgContainer.style.justifyContent = 'center';
+    imgContainer.style.fontSize = '3rem';
+  };
+  
+  imgContainer.appendChild(img);
   
   const info = document.createElement('div');
   info.className = 'deal-info';
   info.innerHTML = `<h4>Closed Deal #${deal.number}</h4>`;
   
-  link.appendChild(img);
+  link.appendChild(imgContainer);
   link.appendChild(info);
   card.appendChild(link);
   dealsCarousel.appendChild(card);
 });
 
-// Reviews Data
+// Reviews data
 const reviews = [
+  {
+    quote: "Kevin was so great to work with! He made the whole process super easy and stress-free. He found me an apartment really fast and handled all the paperwork, which I appreciated so much. He’s professional, kind, and really knows what he’s doing. Highly recommend him!",
+    reviewer: "Anikah N."
+  },
+  {
+    quote: "I am so happy with my new home Kevin has moved me into my second home. He is a great realtor. He’s very knowledgeable about the areas and locations on where to move he was very patient with me on me wanting to look at so many different properties he responds back very quickly and is on time for showings I would highly recommend Kevin Nguyen as your guy to help you find your new home Best Realtor ⭐️⭐️⭐️⭐️⭐️",
+    reviewer: "Teresa T."
+  },
   {
     quote: "Kevin is very knowledgeable and experience realtor. He helped me get a really good deal for my house! He is very experience and professional. He always protect you and get you everything you want. Highly recommended!",
     reviewer: "Cuc N."
@@ -185,14 +209,11 @@ document.querySelectorAll('.carousel-wrapper').forEach(wrapper => {
   });
 });
 
-/* ==================== END script.js ==================== */
-
-
 /* ==================== forest.js ==================== */
 const canvas = document.getElementById('forest-canvas');
 const ctx = canvas.getContext('2d');
 let trees = [];
-let width, height;
+let w, h;
 const numTrees = 25;
 
 function init() {
@@ -200,8 +221,8 @@ function init() {
   trees = [];
   for (let i = 0; i < numTrees; i++) {
     trees.push({
-      x: Math.random() * width,
-      y: Math.random() * height,
+      x: Math.random() * w,
+      y: Math.random() * h,
       size: Math.random() * 60 + 30,
       speed: Math.random() * 0.2 + 0.05,
       opacity: Math.random() * 0.4 + 0.1
@@ -210,12 +231,12 @@ function init() {
 }
 
 function resize() {
-  width = window.innerWidth;
-  height = window.innerHeight;
-  canvas.width = width * devicePixelRatio;
-  canvas.height = height * devicePixelRatio;
-  canvas.style.width = width + 'px';
-  canvas.style.height = height + 'px';
+  w = window.innerWidth;
+  h = window.innerHeight;
+  canvas.width = w * devicePixelRatio;
+  canvas.height = h * devicePixelRatio;
+  canvas.style.width = w + 'px';
+  canvas.style.height = h + 'px';
   ctx.scale(devicePixelRatio, devicePixelRatio);
 }
 
@@ -245,15 +266,15 @@ function drawTree(tree) {
 }
 
 function animate() {
-  ctx.clearRect(0, 0, width, height);
+  ctx.clearRect(0, 0, w, h);
   
   trees.forEach(tree => {
     drawTree(tree);
     tree.y += tree.speed;
     
-    if (tree.y > height + tree.size) {
+    if (tree.y > h + tree.size) {
       tree.y = -tree.size;
-      tree.x = Math.random() * width;
+      tree.x = Math.random() * w;
     }
   });
   
