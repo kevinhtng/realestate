@@ -80,9 +80,15 @@ body {
   transform: scale(1.05);
 }
 
-.moose-icon {
-  font-size: 2rem;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+.moose-logo {
+  height: 50px;
+  width: auto;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.3));
+  transition: transform 0.3s;
+}
+
+.brand:hover .moose-logo {
+  transform: scale(1.1);
 }
 
 .hamburger {
