@@ -135,6 +135,21 @@ deals.forEach(deal => {
 // Reviews data
 const reviews = [
   {
+    quote: "Kevin was so easy to work with. Kevin was kind, he responds fast, and he made the process for finding my new home super smooth. He follows up and stays in contact even after finalizing everything. I highly recommend him if you are in the market for a new home.",
+    reviewer: "Jay Shanece."
+  },
+  {
+    quote: `Moving from another state and buying a house remotely can be nerve-wracking, to say the least. But Kevin Hoang Nguyen was more than just a realtor; He was a constant support. He went above and beyond, even sourcing last-minute paint to meet an FHA requirement and crawling into crawl spaces during inspections with us. We are so grateful for his wisdom, patience, and perseverance in making our dreams come true. His professionalism and support truly made the difference! His deep understanding of local market was invaluable. 
+            He negotiated expertly to get us the best deal, and the entire process, from start to closing was smooth and stress-free.
+            We are so happy with our new home. We highly recommend Kevin Hoang Nguyen to anyone in need of a mortgage, especially in Houston, Texas.
+            Thank you again for your outstanding work.!`,
+    reviewer: "James N."
+},
+  {
+    quote: "Kevin was so great to work with! He made the whole process super easy and stress-free He found me a beautiful house really fast  he was very patient with me showed me so many homes  He's professional, kind, and really knows what he's doing. Highly recommend him! This is my second home Kevin, has found for me  if you get the chance for Kevin, to be your realtor I highly recommend that you do.",
+    reviewer: "Teresa M."
+  },
+  {
     quote: "Kevin was so great to work with! He made the whole process super easy and stress-free. He found me an apartment really fast and handled all the paperwork, which I appreciated so much. He’s professional, kind, and really knows what he’s doing. Highly recommend him!",
     reviewer: "Anikah N."
   },
