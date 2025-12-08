@@ -88,11 +88,13 @@ body {
 .brand-moose {
   font-family: 'Dancing Script', 'Brush Script MT', cursive;
   font-weight: 700;
+  font-size: 2.2rem;
 }
 
 .brand-realty {
   font-family: 'Cormorant Garamond', 'Garamond', 'Georgia', serif;
   font-weight: 600;
+  font-size: 1rem;
 }
 
 .moose-logo {
