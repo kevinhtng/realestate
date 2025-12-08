@@ -80,6 +80,21 @@ body {
   transform: scale(1.05);
 }
 
+.brand-text {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.brand-moose {
+  font-family: 'Dancing Script', 'Brush Script MT', cursive;
+  font-weight: 700;
+}
+
+.brand-realty {
+  font-family: 'Cormorant Garamond', 'Garamond', 'Georgia', serif;
+  font-weight: 600;
+}
+
 .moose-logo {
   height: 50px;
   width: auto;
