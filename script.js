@@ -136,7 +136,7 @@ deals.forEach(deal => {
 const reviews = [
   {
     quote: "Kevin was so easy to work with. Kevin was kind, he responds fast, and he made the process for finding my new home super smooth. He follows up and stays in contact even after finalizing everything. I highly recommend him if you are in the market for a new home.",
-    reviewer: "Jay Shanece."
+    reviewer: "Jay S."
   },
   {
     quote: `Moving from another state and buying a house remotely can be nerve-wracking, to say the least. But Kevin Hoang Nguyen was more than just a realtor; He was a constant support. He went above and beyond, even sourcing last-minute paint to meet an FHA requirement and crawling into crawl spaces during inspections with us. We are so grateful for his wisdom, patience, and perseverance in making our dreams come true. His professionalism and support truly made the difference! His deep understanding of local market was invaluable. 
