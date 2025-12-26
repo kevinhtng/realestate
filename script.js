@@ -34,6 +34,7 @@ document.querySelectorAll('.service-toggle').forEach(btn => {
 
 // Deals data
 const deals = [
+  { number: 53, url: "https://www.facebook.com/marketplace/item/1392693418589236/?mibextid=wwXIfr&rdid=P7w6CXGHXrRTusKk&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F16wrbKfrMi%2F%3Fmibextid%3DwwXIfr#" },
   { number: 52, url: "https://www.har.com/homedetail/13103-benford-dr-houston-tx-77099/3428862?sid=10262676&cid=Kevinhnguyen" },
   { number: 51, url: "https://www.har.com/homedetail/4538-newhope-terrace-ln-katy-tx-77449/3757486?sid=10294172&cid=Kevinhnguyen" },
   { number: 50, url: "https://www.har.com/homedetail/21331-summer-wine-dr-richmond-tx-77406/9703325?sid=10070955&cid=Kevinhnguyen" },
