@@ -4,12 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Moose Realty – Kevin H Nguyen, Broker & Realtor | Houston, TX</title>
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Cormorant+Garamond:wght@600&display=swap" rel="stylesheet">
-  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css">
+
   <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
@@ -18,19 +21,27 @@
   <link rel="manifest" href="images/favicon/site.webmanifest">
 </head>
 <body>
-  <canvas id="forest-canvas"></canvas>
 
-  <nav class="navbar">
+  <!-- Custom cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
+
+  <!-- Ambient canvas (particles + chrome trees) -->
+  <canvas id="ambient-canvas"></canvas>
+
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+  <nav class="navbar" id="navbar">
     <div class="nav-container">
       <a href="#hero" class="brand">
-        <img src="images/moose.png" alt="Moose Realty Logo" class="moose-logo">
+        <img src="images/moose.png" alt="Moose Realty Logo" class="brand-icon" style="height:60px;width:auto;border-radius:0;">
+        <span class="brand-name chrome-text-static">Moose Realty</span>
       </a>
-      <button class="hamburger" aria-label="Menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
       </button>
-      <ul class="nav-menu">
+      <ul class="nav-menu" id="nav-menu">
         <li><a href="#hero">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
@@ -41,159 +52,298 @@
     </div>
   </nav>
 
+  <!-- ============================================================
+       HERO
+  ============================================================ -->
   <section id="hero" class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-lines"></div>
     <div class="hero-content">
-      <h1>Stand Tall, Close Strong with Moose Realty</h1>
-      <p>Navigating Texas Real Estate with Strength & Integrity</p>
-      <a href="#contact" class="cta-button">Get Your Free Home Valuation</a>
+      <p class="hero-eyebrow">Houston, Texas · Licensed Broker &amp; Realtor</p>
+      <h1 class="hero-title">
+        <span class="chrome-text">Stand Tall,</span><br>
+        <em class="chrome-text-static">Close Strong</em>
+      </h1>
+      <p class="hero-sub">Navigating Texas Real Estate with Strength &amp; Integrity</p>
+      <div class="hero-cta-wrap">
+        <a href="#contact" class="btn-primary">Free Home Valuation</a>
+        <a href="#about" class="btn-secondary">About Kevin</a>
+      </div>
     </div>
   </section>
 
-  <section id="about" class="about">
-    <div class="container">
-      <h2>About Me</h2>
-      <div class="about-content">
+  <!-- ============================================================
+       ABOUT
+  ============================================================ -->
+  <section id="about" class="about section-pad">
+    <div class="about-grid">
+
+      <div class="about-left reveal">
+        <div class="about-badge">Licensed Broker</div>
+        <div class="section-label">About</div>
+        <h2 class="section-heading chrome-text-static">Kevin Hoang<br>Nguyen</h2>
+        <div class="divider divider-left"></div>
+        <div class="about-stats">
+          <div class="stat-box reveal reveal-delay-1">
+            <div class="stat-number chrome-text">56+</div>
+            <div class="stat-label">Deals Closed</div>
+          </div>
+          <div class="stat-box reveal reveal-delay-2">
+            <div class="stat-number chrome-text">4+</div>
+            <div class="stat-label">Years Active</div>
+          </div>
+          <div class="stat-box reveal reveal-delay-1">
+            <div class="stat-number chrome-text">30+</div>
+            <div class="stat-label">Happy Clients</div>
+          </div>
+          <div class="stat-box reveal reveal-delay-2">
+            <div class="stat-number chrome-text">5★</div>
+            <div class="stat-label">Avg. Rating</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-text reveal">
         <p>Hi, I'm Kevin Hoang Nguyen — a dedicated licensed real estate broker with a deep understanding of the Houston metropolitan area and over 4 years of experience helping clients achieve their real estate goals.</p>
-        
-        <div class="about-expanded">
+        <div class="about-expanded-wrap" id="about-expanded">
           <p>Having lived in Alief, Sugar Land, Cypress, Richmond, and Fulshear, I bring firsthand knowledge of these dynamic communities. I've also spent significant time in Bellaire and Katy, and frequently visited Missouri City and Rosenberg, giving me valuable insights into the unique characteristics and opportunities each of these areas offers.</p>
-          
           <p>I've had the privilege of helping over 30 clients from diverse backgrounds find their perfect homes. Each experience has only strengthened my passion for making the home-buying and leasing process smooth and enjoyable. With a bachelor's degree in cybersecurity, I know how to leverage technology to better serve my clients — whether that's using advanced tools for property searches or ensuring secure communication and data handling.</p>
-          
           <p>I started my real estate career at just 21 years old, bringing youthful energy, a fresh perspective, and plenty of time to dedicate to my clients' success. My strong base of repeat clients reflects my commitment to excellent service, market expertise, and a personalized approach — along with a growing understanding of real estate investment opportunities.</p>
-          
           <p>When challenges arise, I lean on my trusted network of experienced professionals to make sure my clients always receive the best guidance possible.</p>
-          
           <p>Whether you're buying, selling, or leasing, you can count on me to work tirelessly on your behalf.</p>
-          
-          <p><strong>Let's make your real estate journey seamless and rewarding!</strong></p>
+          <p><strong style="color:var(--chrome-2);">Let's make your real estate journey seamless and rewarding!</strong></p>
         </div>
-        
-        <button class="read-more">Read More</button>
+        <button class="btn-secondary" id="read-more-btn" style="margin-top:2rem;display:inline-block;">Read More ↓</button>
       </div>
+
     </div>
   </section>
 
-  <section id="services" class="services">
-    <div class="container">
-      <h2>Services</h2>
+  <!-- ============================================================
+       SERVICES
+  ============================================================ -->
+  <section id="services" class="services section-pad">
+    <div class="services-container">
+
+      <div class="services-header reveal">
+        <div class="section-label" style="justify-content:center;">Services</div>
+        <h2 class="section-heading chrome-text-static" style="text-align:center;">What I Offer</h2>
+        <div class="divider"></div>
+      </div>
+
       <div class="services-grid">
-        
-        <div class="service-card">
-          <div class="service-icon">🏢</div>
-          <h3>Commercial Properties</h3>
-          <div class="service-content">
-            <p>Whether you're starting a business or searching for an apartment, both fall under commercial services—and I'm here to help.</p>
-            <p>For business owners, I've assisted clients in securing office space tailored to their needs, like leasing an office for an insurance agency. I'll provide a curated list of properties based on your criteria, schedule viewings, and help negotiate key terms such as monthly rate, tenant improvement (TI) allowances, and more.</p>
-            <p>For apartment seekers, I offer referral services. I can send you a list of recommended apartments, or if you already have one in mind, simply list my name as your referral. If the property offers referral compensation, you'll receive a portion of that commission. (Just check with me first to confirm eligibility.)</p>
-            <p><strong>Looking for your next business space or apartment? Contact me today to get started!</strong></p>
+
+        <div class="service-item reveal">
+          <div class="service-num">01</div>
+          <div class="service-icon-wrap">🏢</div>
+          <h3 class="service-title chrome-text-static">Commercial Properties</h3>
+          <div class="service-body" id="svc-1">
+            <p>Whether you're starting a business or searching for an apartment, both fall under commercial services — and I'm here to help.</p>
+            <p>For business owners, I've assisted clients in securing office space tailored to their needs, like leasing an office for an insurance agency. I'll provide a curated list of properties based on your criteria, schedule viewings, and help negotiate key terms such as monthly rate and tenant improvement (TI) allowances.</p>
+            <p>For apartment seekers, I offer referral services. I can send you a list of recommended apartments, or if you already have one in mind, simply list my name as your referral. If the property offers referral compensation, you'll receive a portion of that commission.</p>
+            <p><strong style="color:var(--chrome-2);">Looking for your next business space or apartment? Contact me today to get started!</strong></p>
           </div>
-          <button class="service-toggle">Learn More</button>
+          <button class="service-toggle-btn" data-target="svc-1">
+            View Details <span class="arrow">↓</span>
+          </button>
         </div>
 
-        <div class="service-card">
-          <div class="service-icon">🏡</div>
-          <h3>Buying Assistance</h3>
-          <div class="service-content">
+        <div class="service-item reveal reveal-delay-1">
+          <div class="service-num">02</div>
+          <div class="service-icon-wrap">🏡</div>
+          <h3 class="service-title chrome-text-static">Buying Assistance</h3>
+          <div class="service-body" id="svc-2">
             <p>Thinking about purchasing a new build? If you list me as your agent during registration, I guarantee a rebate back to you at closing. You can negotiate and sign everything directly with the builder — I don't even have to be present unless you'd like me there to assist.</p>
-            <p>With experience helping everyone from investors to first-time home buyers secure their homes, I offer more than just guidance — I provide tailored support at every step. From recommending competitive offer prices to connecting you with professionals such as trusted inspectors, I'm here to simplify your journey. I also help you navigate negotiations to get the best possible deal and can connect you with reputable local mortgage professionals to ease your financing process.</p>
-            <p>Interested in saving even more? Ask me how you can get a rebate at closing!</p>
-            <p><strong>Ready to find your perfect home? Contact me today to get started!</strong></p>
+            <p>With experience helping everyone from investors to first-time home buyers secure their homes, I offer more than just guidance — I provide tailored support at every step. From recommending competitive offer prices to connecting you with professionals such as trusted inspectors, I'm here to simplify your journey.</p>
+            <p>I also help you navigate negotiations to get the best possible deal and can connect you with reputable local mortgage professionals to ease your financing process.</p>
+            <p><strong style="color:var(--chrome-2);">Ready to find your perfect home? Contact me today to get started!</strong></p>
           </div>
-          <button class="service-toggle">Learn More</button>
+          <button class="service-toggle-btn" data-target="svc-2">
+            View Details <span class="arrow">↓</span>
+          </button>
         </div>
 
-        <div class="service-card">
-          <div class="service-icon">💰</div>
-          <h3>Selling Your Property</h3>
-          <div class="service-content">
-            <p>I provide a thorough comparative market analysis (CMA) to recommend the optimal pricing strategy, along with insights on days on market (DOM) for similar properties in your area. You'll receive <strong>all</strong> offers presented clearly, so you stay in control of who you sell to. I also hire professional photographers for every listing—because great photos make a huge difference, and I don't cut corners like some realtors do.</p>
-            <p><strong>Plus, if you'd like a rebate back at closing, just ask!</strong></p>
-            <p><strong>Ready to get started? Contact me today to discuss your selling options!</strong></p>
+        <div class="service-item reveal reveal-delay-2">
+          <div class="service-num">03</div>
+          <div class="service-icon-wrap">💰</div>
+          <h3 class="service-title chrome-text-static">Selling Your Property</h3>
+          <div class="service-body" id="svc-3">
+            <p>I provide a thorough comparative market analysis (CMA) to recommend the optimal pricing strategy, along with insights on days on market (DOM) for similar properties in your area. You'll receive <strong>all</strong> offers presented clearly, so you stay in control of who you sell to.</p>
+            <p>I also hire professional photographers for every listing — because great photos make a huge difference, and I don't cut corners like some realtors do.</p>
+            <p><strong style="color:var(--chrome-2);">Plus, if you'd like a rebate back at closing, just ask! Contact me today to discuss your selling options.</strong></p>
           </div>
-          <button class="service-toggle">Learn More</button>
+          <button class="service-toggle-btn" data-target="svc-3">
+            View Details <span class="arrow">↓</span>
+          </button>
         </div>
 
-        <div class="service-card">
-          <div class="service-icon">🔑</div>
-          <h3>Leasing Services</h3>
-          <div class="service-content">
+        <div class="service-item reveal reveal-delay-3">
+          <div class="service-num">04</div>
+          <div class="service-icon-wrap">🔑</div>
+          <h3 class="service-title chrome-text-static">Leasing Services</h3>
+          <div class="service-body" id="svc-4">
             <p>With over 35 lease deals successfully closed representing both landlords and tenants, I have the process down to a science to help both parties achieve their goals.</p>
-            <p>For landlords, I provide a comprehensive comparative market analysis (CMA) to recommend competitive pricing and ensure your property leases quickly. You'll receive all offers clearly presented, along with my insights on each prospective applicant. I conduct thorough background and credit checks and verify all information to protect your interests. Timeliness is a priority — I work to get your property filled as fast as possible.</p>
+            <p>For landlords, I provide a comprehensive CMA to recommend competitive pricing and ensure your property leases quickly. I conduct thorough background and credit checks and verify all information to protect your interests. Timeliness is a priority — I work to get your property filled as fast as possible.</p>
             <p>For tenants, I'll ensure you meet rental requirements and, if not, offer suggestions to improve your chances. I'll show you listings until you find the perfect home.</p>
-            <p>I also welcome referrals—whether it's a landlord needing help leasing their property or a tenant searching for the right home.</p>
-            <p><strong>Ready to lease your property or find your next home? Contact me today to get started!</strong></p>
+            <p><strong style="color:var(--chrome-2);">Ready to lease your property or find your next home? Contact me today to get started!</strong></p>
           </div>
-          <button class="service-toggle">Learn More</button>
+          <button class="service-toggle-btn" data-target="svc-4">
+            View Details <span class="arrow">↓</span>
+          </button>
         </div>
 
       </div>
     </div>
   </section>
 
-  <section id="deals" class="deals">
-    <div class="container">
-      <h2>Closed Deals</h2>
-      <div class="carousel-wrapper">
-        <button class="carousel-btn prev" aria-label="Previous">‹</button>
-        <div class="carousel" id="deals-carousel"></div>
-        <button class="carousel-btn next" aria-label="Next">›</button>
+  <!-- ============================================================
+       DEALS
+  ============================================================ -->
+  <section id="deals" class="deals section-pad">
+    <div class="deals-container">
+      <div class="deals-header reveal">
+        <div class="section-label">Track Record</div>
+        <h2 class="section-heading chrome-text-static">Closed Deals</h2>
+        <div class="divider divider-left"></div>
+      </div>
+      <div class="carousel-outer">
+        <div class="deals-track" id="deals-track"></div>
+        <div class="carousel-controls">
+          <button class="ctrl-btn" id="deals-prev">←</button>
+          <button class="ctrl-btn" id="deals-next">→</button>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="reviews" class="reviews">
-    <div class="container">
-      <h2>Client Reviews</h2>
-      <div class="carousel-wrapper">
-        <button class="carousel-btn prev" aria-label="Previous">‹</button>
-        <div class="carousel reviews-carousel" id="reviews-carousel"></div>
-        <button class="carousel-btn next" aria-label="Next">›</button>
+  <!-- ============================================================
+       REVIEWS
+  ============================================================ -->
+  <section id="reviews" class="reviews section-pad">
+    <div class="reviews-container">
+      <div class="deals-header reveal" style="margin-bottom:4rem;">
+        <div class="section-label">Testimonials</div>
+        <h2 class="section-heading chrome-text-static">Client Reviews</h2>
+        <div class="divider divider-left"></div>
+      </div>
+      <div class="carousel-outer">
+        <div class="reviews-track" id="reviews-track"></div>
+        <div class="carousel-controls">
+          <button class="ctrl-btn" id="reviews-prev">←</button>
+          <button class="ctrl-btn" id="reviews-next">→</button>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="contact" class="contact">
-    <div class="container">
-      <h2>Contact Me</h2>
-      <form action="https://formspree.io/f/mzzvvejb" method="POST" class="contact-form">
-        <div class="form-group">
-          <label for="name">Your Name</label>
-          <input type="text" id="name" name="name" required>
+  <!-- ============================================================
+       CONTACT
+  ============================================================ -->
+  <section id="contact" class="contact section-pad">
+    <div class="contact-container">
+
+      <div class="reveal">
+        <div class="section-label">Get In Touch</div>
+        <h2 class="section-heading chrome-text-static">Let's Work<br>Together</h2>
+        <div class="divider divider-left"></div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:300;color:var(--text-body);line-height:1.8;margin-bottom:2.5rem;">
+          Whether you're buying, selling, or leasing — I'm here to make your real estate journey seamless and rewarding.
+        </h3>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">✉</div>
+          <div>
+            <div class="contact-detail-label">Email</div>
+            <div class="contact-detail-text">kevinngrealtor@gmail.com</div>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="email">Your Email</label>
-          <input type="email" id="email" name="email" required>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">☎</div>
+          <div>
+            <div class="contact-detail-label">Phone</div>
+            <div class="contact-detail-text">(832) 525-3584</div>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="phone">Your Phone (optional)</label>
-          <input type="tel" id="phone" name="phone">
+        <div class="contact-detail">
+          <div class="contact-detail-icon">📍</div>
+          <div>
+            <div class="contact-detail-label">Service Area</div>
+            <div class="contact-detail-text">Houston Metropolitan Area, TX</div>
+          </div>
         </div>
-        <button type="submit" class="cta-button">Send Message</button>
-      </form>
+      </div>
+
+      <div class="contact-form-wrap reveal reveal-delay-1">
+        <form action="https://formspree.io/f/mzzvvejb" method="POST">
+          <div class="form-field">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="John Smith" required>
+          </div>
+          <div class="form-field">
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" placeholder="john@example.com" required>
+          </div>
+          <div class="form-field">
+            <label for="phone">Your Phone (optional)</label>
+            <input type="tel" id="phone" name="phone" placeholder="(832) 000-0000">
+          </div>
+          <button type="submit" class="btn-primary" style="width:100%;text-align:center;margin-top:1rem;">Send Message</button>
+        </form>
+      </div>
+
     </div>
   </section>
 
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
   <footer>
-    <div class="container">
-      <p><a href="https://www.har.com/mhf/terms/dispBrokerInfo?sitetype=aws&cid=772135&token=10467b6cd0e1cbfbe9d69a50621ed844" target="_blank" rel="noopener noreferrer">IABS - Information About Brokerage Services</a></p>
-      <p>Email: kevinngrealtor@gmail.com | Phone: (832) 525-3584</p>
-      <p>Licensed in Texas</p>
-      <div class="social-links">
-        <a href="https://www.facebook.com/MooseRealty/" target="_blank" aria-label="Facebook">
-          <img src="images/social/facebook.png" alt="Facebook" />
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:1rem;">
+          <img src="images/moose.png" alt="Moose Realty" style="height:36px;width:auto;">
+          <span class="brand-name chrome-text-static" style="font-size:1rem;">Moose Realty</span>
+        </div>
+        <p>Navigating Texas real estate with strength, integrity, and a commitment to excellence.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#deals">Closed Deals</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p><a href="mailto:kevinngrealtor@gmail.com">kevinngrealtor@gmail.com</a></p>
+        <p><a href="tel:8325253584">(832) 525-3584</a></p>
+        <p>Licensed in Texas</p>
+        <p style="margin-top:1rem;">
+          <a href="https://www.har.com/mhf/terms/dispBrokerInfo?sitetype=aws&cid=772135&token=10467b6cd0e1cbfbe9d69a50621ed844" target="_blank" rel="noopener noreferrer">IABS Disclosure</a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Moose Realty · Kevin Hoang Nguyen · Licensed Real Estate Broker · Texas</p>
+      <div class="social-row">
+        <a href="https://www.facebook.com/MooseRealty/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <img src="images/social/facebook.png" alt="Facebook" style="width:18px;height:18px;object-fit:contain;filter:brightness(0) invert(0.6);">
         </a>
-        <a href="https://instagram.com/mooserealty" target="_blank" aria-label="Instagram">
-          <img src="images/social/instagram.png" alt="Instagram" />
+        <a href="https://instagram.com/mooserealty" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <img src="images/social/instagram.png" alt="Instagram" style="width:18px;height:18px;object-fit:contain;filter:brightness(0) invert(0.6);">
         </a>
-        <a href="https://www.google.com/search?kgmid=/g/11svdmz7jx&q=Kevin+Hoang+Nguyen+Realtor" target="_blank" aria-label="Google Reviews">
-          <img src="images/social/google.png" alt="Google Reviews" />
+        <a href="https://www.google.com/search?kgmid=/g/11svdmz7jx&q=Kevin+Hoang+Nguyen+Realtor" target="_blank" rel="noopener noreferrer" aria-label="Google Reviews">
+          <img src="images/social/google.png" alt="Google" style="width:18px;height:18px;object-fit:contain;filter:brightness(0) invert(0.6);">
         </a>
       </div>
     </div>
   </footer>
 
-  <script src="forest.js"></script>
+  <!-- Scripts -->
   <script src="script.js"></script>
+
 </body>
 </html>
