@@ -228,15 +228,24 @@ dealsData.forEach(d => {
   a.href = d.url;
   a.target = '_blank';
   a.rel = 'noopener noreferrer';
-  a.innerHTML = `
-    <div class="deal-img-wrap">
-      <img src="images/deal-${d.n}.jpg" alt="Deal #${d.n}"
-        onerror="this.parentElement.innerHTML='<span style=\\"font-size:2.5rem;filter:grayscale(1)\\">🏡</span>'">
-    </div>
-    <div class="deal-info">
-      <div class="deal-num">Deal #${d.n}</div>
-      <div class="deal-title">Closed Transaction</div>
-    </div>`;
+
+  const imgWrap = document.createElement('div');
+  imgWrap.className = 'deal-img-wrap';
+
+  const img = document.createElement('img');
+  img.src = `images/deal-${d.n}.jpg`;
+  img.alt = `Deal #${d.n}`;
+  img.onerror = function () {
+    imgWrap.innerHTML = '<span style="font-size:2.5rem;filter:grayscale(1)">🏡</span>';
+  };
+  imgWrap.appendChild(img);
+
+  const info = document.createElement('div');
+  info.className = 'deal-info';
+  info.innerHTML = `<div class="deal-num">Deal #${d.n}</div><div class="deal-title">Closed Transaction</div>`;
+
+  a.appendChild(imgWrap);
+  a.appendChild(info);
   dealsTrack.appendChild(a);
 });
 
