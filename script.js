@@ -293,3 +293,17 @@ const revealObs = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.12 });
 revealEls.forEach(el => revealObs.observe(el));
+
+/* ---- Email (built via JS to avoid Cloudflare obfuscation) ---- */
+(function () {
+  const user   = 'kevinngrealtor';
+  const domain = 'gmail.com';
+  const email  = user + '@' + domain;
+  const link   = '<a href="mailto:' + email + '" style="color:inherit;text-decoration:none;">' + email + '</a>';
+
+  const contactEl = document.getElementById('contact-email');
+  if (contactEl) contactEl.innerHTML = link;
+
+  const footerEl = document.getElementById('footer-email');
+  if (footerEl) footerEl.innerHTML = link;
+})();
