@@ -264,7 +264,7 @@ const reviewsData = [
   { q: "Moving from another state and buying remotely can be nerve-wracking. Kevin went above and beyond — sourcing last-minute paint to meet FHA requirements, crawling into crawl spaces during inspections. His wisdom, patience, and perseverance made our dreams come true.", r: "James N." },
   { q: "Kevin was so great to work with! He made the whole process super easy and stress-free. He found me a beautiful house really fast, was very patient, showed me so many homes. This is my second home Kevin has found for me.", r: "Teresa M." },
   { q: "Kevin found me an apartment really fast and handled all the paperwork. He's professional, kind, and really knows what he's doing. Highly recommend!", r: "Anikah N." },
-  { q: "He is a great realtor. Very knowledgeable about areas and locations, very patient, responds back very quickly, and is on time for showings. Best Realtor ⭐⭐⭐⭐⭐", r: "Teresa T." },
+  { q: "He is a great realtor. Very knowledgeable about areas and locations, very patient, responds back very quickly, and is on time for showings. Best Realtor ★★★★★", r: "Teresa T." },
   { q: "Kevin is very knowledgeable and experienced. He helped me get a really good deal for my house. He always protects you and gets you everything you want. Highly recommended!", r: "Cuc N." },
   { q: "Kevin is an amazing realtor. He listens, is professional, and makes sure you get everything you want. He will listen and take his time to find your dream house. He responded quickly and was always there.", r: "Duc N." },
   { q: "You've been so helpful and attentive throughout this whole process, and you're a funny guy, Kevin!", r: "Matthew M." },
