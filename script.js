@@ -255,6 +255,11 @@ document.getElementById('deals-next').addEventListener('click', () => dealsTrack
 
 /* ---- Reviews carousel ---- */
 const reviewsData = [
+  { q: "Great service provided by Kevin for my recent rental. In my opinion what really stood out was his dedication and genuine care. It never felt like just a transaction he truly wanted the best outcome for me. I highly recommend moose realty to anyone looking to rent out their home or navigate the real estate process with confidence.", r: "Rashid Y." },
+  { q: "★★★★★", r: "Nga T." },
+  { q: "We've worked with Kevin twice now, and we'll do so again if/when the need arises. He works at your pace (which in our case was fast), his response time is near immediate, he worked around our busy schedule, and he is insanely organized. Additionally, Kevin was instrumental in helping negotiate the best price. 100% recommend!", r: "Arthur L." },
+  { q: "Kevin is really nice and friendly. He try to help me get the right i need within a day. The best broker.", r: "Patrick H." },
+  { q: "★★★★★", r: "Thuan N." },
   { q: "Kevin was so easy to work with. He responds fast and made the process for finding my new home super smooth. He follows up and stays in contact even after finalizing everything. Highly recommend!", r: "Jay S." },
   { q: "Moving from another state and buying remotely can be nerve-wracking. Kevin went above and beyond — sourcing last-minute paint to meet FHA requirements, crawling into crawl spaces during inspections. His wisdom, patience, and perseverance made our dreams come true.", r: "James N." },
   { q: "Kevin was so great to work with! He made the whole process super easy and stress-free. He found me a beautiful house really fast, was very patient, showed me so many homes. This is my second home Kevin has found for me.", r: "Teresa M." },
