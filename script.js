@@ -255,6 +255,7 @@ document.getElementById('deals-next').addEventListener('click', () => dealsTrack
 
 /* ---- Reviews carousel ---- */
 const reviewsData = [
+  { q: "Kevin was a pleasure to deal with. I had to go back and forth a bit with the owners in leasing a place here in Houston, and he helped me through the process. Give him a shot if you need any help with real estate!", r: "Karey K." },
   { q: "Great service provided by Kevin for my recent rental. In my opinion what really stood out was his dedication and genuine care. It never felt like just a transaction he truly wanted the best outcome for me. I highly recommend moose realty to anyone looking to rent out their home or navigate the real estate process with confidence.", r: "Rashid Y." },
   { q: "★★★★★", r: "Nga T." },
   { q: "We've worked with Kevin twice now, and we'll do so again if/when the need arises. He works at your pace (which in our case was fast), his response time is near immediate, he worked around our busy schedule, and he is insanely organized. Additionally, Kevin was instrumental in helping negotiate the best price. 100% recommend!", r: "Arthur L." },
