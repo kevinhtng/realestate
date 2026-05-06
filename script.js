@@ -163,6 +163,7 @@ document.querySelectorAll('.service-toggle-btn').forEach(btn => {
 
 /* ---- Deals carousel ---- */
 const dealsData = [
+  { n: 58, url: "https://www.har.com/homedetail/26807-copernicus-cove-ct-richmond-tx-77406/16896561?sid=10428751&cid=Kevinhnguyen" },
   { n: 57, url: "https://www.har.com/homedetail/18139-swallow-springs-way-spring-tx-77379/13598164?sid=10574895" },
   { n: 56, url: "https://www.har.com/homedetail/11123-pembroke-ridge-dr-houston-tx-77065/3775627?sid=10455666&cid=Kevinhnguyen" },
   { n: 55, url: "https://www.har.com/homedetail/4324-spring-valley-rd-houston-tx-77041/16307958?sid=10519586&cid=Kevinhnguyen" },
