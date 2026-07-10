@@ -163,6 +163,9 @@ document.querySelectorAll('.service-toggle-btn').forEach(btn => {
 
 /* ---- Deals carousel ---- */
 const dealsData = [
+  { n: 62, url: "https://www.har.com/homedetail/6920-flintlock-rd-c-houston-tx-77040/17631028?sid=11028896" },
+  { n: 61, url: "https://www.har.com/homedetail/6920-flintlock-rd-b-houston-tx-77040/17631041?sid=11028986" },
+  { n: 60, url: "https://www.har.com/homedetail/6920-flintlock-rd-houston-tx-77040/10771984?sid=11028854" },
   { n: 59, url: "https://www.har.com/homedetail/14019-sunrise-arbor-ln-cypress-tx-77429/13977226?sid=10948367" },
   { n: 58, url: "https://www.har.com/homedetail/26807-copernicus-cove-ct-richmond-tx-77406/16896561?sid=10428751&cid=Kevinhnguyen" },
   { n: 57, url: "https://www.har.com/homedetail/18139-swallow-springs-way-spring-tx-77379/13598164?sid=10574895" },
