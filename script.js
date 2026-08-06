@@ -163,6 +163,9 @@ document.querySelectorAll('.service-toggle-btn').forEach(btn => {
 
 /* ---- Deals carousel ---- */
 const dealsData = [
+  { n: 65, url: "https://www.har.com/homedetail/18251-river-sage-dr-houston-tx-77084/3713180?sid=11090994&cid=Kevinhnguyen" },
+  { n: 64, url: "https://www.har.com/homedetail/608-oak-ln-cottonwood-shores-tx-78657/967652?sid=11090996&cid=Kevinhnguyen" },
+  { n: 63, url: "https://www.har.com/homedetail/6920-flintlock-rd-d-houston-tx-77040/17630840?sid=11017582&cid=Kevinhnguyen" },
   { n: 62, url: "https://www.har.com/homedetail/6920-flintlock-rd-c-houston-tx-77040/17631028?sid=11028896" },
   { n: 61, url: "https://www.har.com/homedetail/6920-flintlock-rd-b-houston-tx-77040/17631041?sid=11028986" },
   { n: 60, url: "https://www.har.com/homedetail/6920-flintlock-rd-houston-tx-77040/10771984?sid=11028854" },
