@@ -322,3 +322,7 @@ revealEls.forEach(el => revealObs.observe(el));
   const footerEl = document.getElementById('footer-email');
   if (footerEl) footerEl.innerHTML = link;
 })();
+
+/* ---- Footer year (auto-updates) ---- */
+const footerYearEl = document.getElementById('footer-year');
+if (footerYearEl) footerYearEl.textContent = new Date().getFullYear();
