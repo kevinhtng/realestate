@@ -5,6 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Moose Realty – Kevin H Nguyen, Broker & Realtor | Houston, TX</title>
 
+  <!-- SEO: Meta Description -->
+  <meta name="description" content="Kevin H Nguyen, licensed Broker at Moose Realty, serves Houston, Katy, Sugar Land, Cypress, Richmond, Fulshear & surrounding areas. 65+ closed deals, 5-star client reviews. Buy, sell, or lease with confidence.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://officialmooserealty.com/">
+
+  <!-- SEO: Open Graph (Facebook/LinkedIn link previews) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Moose Realty – Kevin H Nguyen, Broker & Realtor | Houston, TX">
+  <meta property="og:description" content="Licensed Houston-area Broker with 65+ closed deals and 5-star client reviews. Buying, selling, leasing & investment across Katy, Sugar Land, Cypress, Richmond, Fulshear & more.">
+  <meta property="og:url" content="https://officialmooserealty.com/">
+  <meta property="og:image" content="https://officialmooserealty.com/images/moose.png">
+  <meta property="og:locale" content="en_US">
+
+  <!-- SEO: Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Moose Realty – Kevin H Nguyen, Broker & Realtor | Houston, TX">
+  <meta name="twitter:description" content="Licensed Houston-area Broker with 65+ closed deals and 5-star client reviews.">
+  <meta name="twitter:image" content="https://officialmooserealty.com/images/moose.png">
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,12 +32,58 @@
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css">
 
+  <!-- Visually-hidden utility class for SEO-friendly, accessible text -->
+  <style>
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+  </style>
+
   <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
   <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico">
   <link rel="manifest" href="images/favicon/site.webmanifest">
+
+  <!-- SEO: Structured Data (Schema.org) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "name": "Moose Realty – Kevin H Nguyen, Broker",
+    "image": "https://officialmooserealty.com/images/moose.png",
+    "url": "https://officialmooserealty.com/",
+    "telephone": "+1-832-525-3584",
+    "email": "kevinngrealtor@gmail.com",
+    "areaServed": [
+      "Houston, TX", "Katy, TX", "Sugar Land, TX", "Cypress, TX", "Richmond, TX",
+      "Fulshear, TX", "Missouri City, TX", "Sienna, TX", "Greatwood, TX",
+      "Cinco Ranch, TX", "Aliana, TX", "Four Corners, TX", "Mission Bend, TX",
+      "Stafford, TX", "Champion Forest, TX", "Pecan Grove, TX", "Meadows Place, TX",
+      "Copperfield Place, TX"
+    ],
+    "priceRange": "$$",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "20"
+    },
+    "sameAs": [
+      "https://www.facebook.com/MooseRealty/",
+      "https://instagram.com/mooserealty",
+      "https://www.google.com/search?kgmid=/g/11svdmz7jx&q=Kevin+Hoang+Nguyen+Realtor"
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -61,8 +126,9 @@
     <div class="hero-content">
       <p class="hero-eyebrow">Houston, Texas · Licensed Broker &amp; Realtor</p>
       <h1 class="hero-title">
-        <span class="chrome-text">Stand Tall,</span><br>
-        <em class="chrome-text-static">Close Strong</em>
+        <span class="sr-only">Houston Realtor — Kevin H Nguyen | Moose Realty</span>
+        <span class="chrome-text" aria-hidden="true">Stand Tall,</span><br aria-hidden="true">
+        <em class="chrome-text-static" aria-hidden="true">Close Strong</em>
       </h1>
       <p class="hero-sub">Navigating Texas Real Estate with Strength &amp; Integrity</p>
       <div class="hero-cta-wrap">
