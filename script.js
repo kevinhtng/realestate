@@ -163,6 +163,7 @@ document.querySelectorAll('.service-toggle-btn').forEach(btn => {
 
 /* ---- Deals carousel ---- */
 const dealsData = [
+  { n: 66, url: "https://www.har.com/homedetail/4322-spring-valley-rd-houston-tx-77041/3216351?sid=11183944" },
   { n: 65, url: "https://www.har.com/homedetail/18251-river-sage-dr-houston-tx-77084/3713180?sid=11090994&cid=Kevinhnguyen" },
   { n: 64, url: "https://www.har.com/homedetail/608-oak-ln-cottonwood-shores-tx-78657/967652?sid=11090996&cid=Kevinhnguyen" },
   { n: 63, url: "https://www.har.com/homedetail/6920-flintlock-rd-d-houston-tx-77040/17630840?sid=11017582&cid=Kevinhnguyen" },
