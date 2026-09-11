@@ -327,7 +327,7 @@ body {
    SECTION BASE
 ============================================================ */
 section { position: relative; z-index: 1; }
-.section-pad { padding: 8rem 0; }
+.section-pad { padding: 5rem 0; }
 
 .section-label {
   font-size: 0.65rem; font-weight: 600;
