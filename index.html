@@ -15,14 +15,14 @@
   <meta property="og:title" content="Moose Realty – Kevin H Nguyen, Broker & Realtor | Houston, TX">
   <meta property="og:description" content="Licensed Houston-area Broker with 65+ closed deals and 5-star client reviews. Buying, selling, leasing & investment across Katy, Sugar Land, Cypress, Richmond, Fulshear & more.">
   <meta property="og:url" content="https://officialmooserealty.com/">
-  <meta property="og:image" content="https://officialmooserealty.com/images/moose.png">
+  <meta property="og:image" content="https://officialmooserealty.com/images/team/kevin-broker.jpg">
   <meta property="og:locale" content="en_US">
 
   <!-- SEO: Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Moose Realty – Kevin H Nguyen, Broker & Realtor | Houston, TX">
   <meta name="twitter:description" content="Licensed Houston-area Broker with 65+ closed deals and 5-star client reviews.">
-  <meta name="twitter:image" content="https://officialmooserealty.com/images/moose.png">
+  <meta name="twitter:image" content="https://officialmooserealty.com/images/team/kevin-broker.jpg">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -60,7 +60,7 @@
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
     "name": "Moose Realty – Kevin H Nguyen, Broker",
-    "image": "https://officialmooserealty.com/images/moose.png",
+    "image": "https://officialmooserealty.com/images/team/kevin-broker.jpg",
     "url": "https://officialmooserealty.com/",
     "telephone": "+1-832-525-3584",
     "email": "kevinngrealtor@gmail.com",
@@ -77,6 +77,29 @@
       "ratingValue": "5.0",
       "reviewCount": "20"
     },
+    "employee": [
+      {
+        "@type": "Person",
+        "name": "Kevin Hoang Nguyen",
+        "jobTitle": "Broker",
+        "image": "https://officialmooserealty.com/images/team/kevin-broker.jpg",
+        "worksFor": { "@type": "RealEstateAgent", "name": "Moose Realty" }
+      },
+      {
+        "@type": "Person",
+        "name": "Agent One",
+        "jobTitle": "Realtor",
+        "image": "https://officialmooserealty.com/images/team/agent-1.jpg",
+        "worksFor": { "@type": "RealEstateAgent", "name": "Moose Realty" }
+      },
+      {
+        "@type": "Person",
+        "name": "Agent Two",
+        "jobTitle": "Realtor",
+        "image": "https://officialmooserealty.com/images/team/agent-2.jpg",
+        "worksFor": { "@type": "RealEstateAgent", "name": "Moose Realty" }
+      }
+    ],
     "sameAs": [
       "https://www.facebook.com/MooseRealty/",
       "https://instagram.com/mooserealty",
@@ -108,10 +131,11 @@
       </button>
       <ul class="nav-menu" id="nav-menu">
         <li><a href="#hero">Home</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#deals">Deals</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
-        <li><a href="#deals">Deals</a></li>
-        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#team">Team</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
@@ -134,6 +158,46 @@
       <div class="hero-cta-wrap">
         <a href="#contact" class="btn-primary">Free Home Valuation</a>
         <a href="#about" class="btn-secondary">About Kevin</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       REVIEWS
+  ============================================================ -->
+  <section id="reviews" class="reviews section-pad">
+    <div class="reviews-container">
+      <div class="deals-header reveal" style="margin-bottom:4rem;">
+        <div class="section-label">Testimonials</div>
+        <h2 class="section-heading chrome-text-static">Client Reviews</h2>
+        <div class="divider divider-left"></div>
+      </div>
+      <div class="carousel-outer">
+        <div class="reviews-track" id="reviews-track"></div>
+        <div class="carousel-controls">
+          <button class="ctrl-btn" id="reviews-prev">←</button>
+          <button class="ctrl-btn" id="reviews-next">→</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       DEALS
+  ============================================================ -->
+  <section id="deals" class="deals section-pad">
+    <div class="deals-container">
+      <div class="deals-header reveal">
+        <div class="section-label">Track Record</div>
+        <h2 class="section-heading chrome-text-static">Closed Deals</h2>
+        <div class="divider divider-left"></div>
+      </div>
+      <div class="carousel-outer">
+        <div class="deals-track" id="deals-track"></div>
+        <div class="carousel-controls">
+          <button class="ctrl-btn" id="deals-prev">←</button>
+          <button class="ctrl-btn" id="deals-next">→</button>
+        </div>
       </div>
     </div>
   </section>
@@ -263,41 +327,52 @@
   </section>
 
   <!-- ============================================================
-       DEALS
+       TEAM
   ============================================================ -->
-  <section id="deals" class="deals section-pad">
-    <div class="deals-container">
-      <div class="deals-header reveal">
-        <div class="section-label">Track Record</div>
-        <h2 class="section-heading chrome-text-static">Closed Deals</h2>
-        <div class="divider divider-left"></div>
-      </div>
-      <div class="carousel-outer">
-        <div class="deals-track" id="deals-track"></div>
-        <div class="carousel-controls">
-          <button class="ctrl-btn" id="deals-prev">←</button>
-          <button class="ctrl-btn" id="deals-next">→</button>
-        </div>
-      </div>
-    </div>
-  </section>
+  <section id="team" class="team section-pad">
+    <div class="team-container">
 
-  <!-- ============================================================
-       REVIEWS
-  ============================================================ -->
-  <section id="reviews" class="reviews section-pad">
-    <div class="reviews-container">
-      <div class="deals-header reveal" style="margin-bottom:4rem;">
-        <div class="section-label">Testimonials</div>
-        <h2 class="section-heading chrome-text-static">Client Reviews</h2>
-        <div class="divider divider-left"></div>
+      <div class="team-header reveal">
+        <div class="section-label" style="justify-content:center;">Meet the Team</div>
+        <h2 class="section-heading chrome-text-static" style="text-align:center;">The People Behind Moose Realty</h2>
+        <div class="divider"></div>
       </div>
-      <div class="carousel-outer">
-        <div class="reviews-track" id="reviews-track"></div>
-        <div class="carousel-controls">
-          <button class="ctrl-btn" id="reviews-prev">←</button>
-          <button class="ctrl-btn" id="reviews-next">→</button>
+
+      <div class="team-grid">
+
+        <div class="team-card reveal">
+          <div class="team-photo-wrap">
+            <img src="images/team/kevin-broker.jpg" alt="Kevin Hoang Nguyen, Broker at Moose Realty">
+          </div>
+          <div class="team-info">
+            <h3 class="team-name chrome-text-static">Kevin Hoang Nguyen</h3>
+            <div class="team-role">Broker</div>
+            <p class="team-bio">Founder of Moose Realty with 65+ closed deals across the Houston metro area.</p>
+          </div>
         </div>
+
+        <div class="team-card reveal reveal-delay-1">
+          <div class="team-photo-wrap">
+            <img src="images/team/agent-1.jpg" alt="Agent One, Realtor at Moose Realty">
+          </div>
+          <div class="team-info">
+            <h3 class="team-name chrome-text-static">Agent One</h3>
+            <div class="team-role">Realtor</div>
+            <p class="team-bio">Dedicated to guiding buyers and tenants through every step of the process.</p>
+          </div>
+        </div>
+
+        <div class="team-card reveal reveal-delay-2">
+          <div class="team-photo-wrap">
+            <img src="images/team/agent-2.jpg" alt="Agent Two, Realtor at Moose Realty">
+          </div>
+          <div class="team-info">
+            <h3 class="team-name chrome-text-static">Agent Two</h3>
+            <div class="team-role">Realtor</div>
+            <p class="team-bio">Focused on helping sellers and landlords get the best results, fast.</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -375,10 +450,11 @@
         <h4>Navigation</h4>
         <ul>
           <li><a href="#hero">Home</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#deals">Closed Deals</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#services">Services</a></li>
-          <li><a href="#deals">Closed Deals</a></li>
-          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#team">Team</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
