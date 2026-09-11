@@ -163,7 +163,6 @@ document.querySelectorAll('.service-toggle-btn').forEach(btn => {
 
 /* ---- Deals carousel ---- */
 const dealsData = [
-  { n: 66, url: "https://www.har.com/homedetail/4322-spring-valley-rd-houston-tx-77041/3216351?sid=11183944" },
   { n: 65, url: "https://www.har.com/homedetail/18251-river-sage-dr-houston-tx-77084/3713180?sid=11090994&cid=Kevinhnguyen" },
   { n: 64, url: "https://www.har.com/homedetail/608-oak-ln-cottonwood-shores-tx-78657/967652?sid=11090996&cid=Kevinhnguyen" },
   { n: 63, url: "https://www.har.com/homedetail/6920-flintlock-rd-d-houston-tx-77040/17630840?sid=11017582&cid=Kevinhnguyen" },
@@ -231,6 +230,28 @@ const dealsData = [
   { n: 1,  url: "https://www.har.com/homedetail/7307-ferrara-dr-houston-tx-77083/8930273?sid=6567600&cid=Kevinhnguyen" }
 ];
 
+/* Parse a city + ZIP out of the HAR.com listing slug so we can build
+   descriptive alt text like "Katy, TX 77494" for each deal photo. */
+function cityFromUrl(url) {
+  const knownCities = [
+    'sugar-land', 'missouri-city', 'jersey-village', 'mission-bend',
+    'cottonwood-shores', 'jamaica-beach', 'friendswood', 'four-corners',
+    'cinco-ranch', 'champion-forest', 'pecan-grove', 'meadows-place',
+    'copperfield-place', 'houston', 'katy', 'cypress', 'richmond',
+    'fulshear', 'spring'
+  ];
+  const match = url.match(/\/homedetail\/([a-z0-9-]+)-tx-(\d{5})\//i);
+  if (!match) return null;
+  const slug = match[1].toLowerCase();
+  const zip = match[2];
+  const city = knownCities
+    .sort((a, b) => b.length - a.length)
+    .find(c => slug.endsWith('-' + c) || slug === c);
+  if (!city) return null;
+  const cityName = city.split('-').map(w => w[0].toUpperCase() + w.slice(1)).join(' ');
+  return `${cityName}, TX ${zip}`;
+}
+
 const dealsTrack = document.getElementById('deals-track');
 dealsData.forEach(d => {
   const a = document.createElement('a');
@@ -242,9 +263,14 @@ dealsData.forEach(d => {
   const imgWrap = document.createElement('div');
   imgWrap.className = 'deal-img-wrap';
 
+  const locationLabel = cityFromUrl(d.url);
+  const altText = locationLabel
+    ? `Closed real estate transaction in ${locationLabel} – Deal #${d.n}`
+    : `Closed real estate transaction – Deal #${d.n}`;
+
   const img = document.createElement('img');
   img.src = `images/deal-${d.n}.jpg`;
-  img.alt = `Deal #${d.n}`;
+  img.alt = altText;
   img.onerror = function () {
     imgWrap.innerHTML = '<span style="font-size:2.5rem;filter:grayscale(1)">🏡</span>';
   };
@@ -252,7 +278,7 @@ dealsData.forEach(d => {
 
   const info = document.createElement('div');
   info.className = 'deal-info';
-  info.innerHTML = `<div class="deal-num">Deal #${d.n}</div><div class="deal-title">Closed Transaction</div>`;
+  info.innerHTML = `<div class="deal-num">Deal #${d.n}</div><div class="deal-title">${locationLabel ? 'Closed in ' + locationLabel : 'Closed Transaction'}</div>`;
 
   a.appendChild(imgWrap);
   a.appendChild(info);
